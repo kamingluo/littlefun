@@ -1,0 +1,58 @@
+<cu-custom bgColor="bg-gradual-purple" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">十秒挑战</view>
+</cu-custom>
+
+<view>
+
+  <view class="time centered">
+    <view class="time-body centered  bg-gradual-orange">
+      <text class="time-text">{{time}}:{{num}}</text>
+    </view>
+  </view>
+
+  <view class="rule centered">
+    <text>挑战成功将获得:{{gamescore}}金币</text>
+  </view>
+
+  <view class="start centered">
+
+    <view class="btn centered bg-green shadow" bindtap="startgame" wx:if="{{gametype===0}}">
+      <text class="btn-text centered">开始</text>
+    </view>
+
+    <view class="btn centered bg-red shadow" bindtap="endSetInter" wx:elif="{{gametype===1}}">
+      <text class="btn-text centered">停止</text>
+    </view>
+
+    <view class="btn centered bg-grey shadow" bindtap="insufficient" wx:else>
+      <text class="btn-text centered">开始</text>
+    </view>
+  </view>
+
+  <view class="centered  tips">
+    <text>当前剩余挑战数：{{gamenum}}次</text>
+  </view>
+
+
+  <view class="video-ad">
+    <button class="video-button bg-gradual-red shadow"  bindtap="clickvideoad" wx:if="{{todaynum < 10 }}">
+      获取挑战次数
+      <text class="cuIcon-video"></text>
+    </button>
+     <button class="video-button bg-grey shadow"   wx:else>
+     明天再来看视频吧!
+    </button>
+  </view>
+
+<!-- 广点通banner广告开始-->
+<view class='centered'>
+  <view class='gdtad'>
+    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-88a7910854b55322" unit-id="adunit-88a7910854b55322"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->
+
+
+
+</view>

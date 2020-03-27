@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}" >
+<view slot="backText">返回</view>
+  <view slot="content">测试页面</view>
+</cu-custom>
+
+<!-- <button  bindtap='increaseScore' >积分增加测试</button>
+
+<button  bindtap='reduceScore' >积分减少测试</button>
+
+<button  bindtap='havecode' >获取code</button>
+<button  bindtap='testjumpminiapp' >跳转小程序测试</button>
+
+
+<button  bindtap='lookvideoad' >lookvideoad</button>
+<button  bindtap='clickbannerad' >clickbannerad</button>
+<button  bindtap='clickminiappad' >clickminiappad</button>
+<button  bindtap='clickwlad' >clickwlad</button>
+<button  bindtap='signin' >signin</button>
+<button  bindtap='signdouble' >signdouble</button>
+<button  bindtap='share' >share</button> -->
+
+
+<view  class='testbutton'   >
+ <kaming-button > <button  bindtap='buttonzujian' class='bg-gradual-blue'>自定义组件测试</button></kaming-button>
+</view>
+
+<view  class='testbutton'   >
+  <kaming-button  > <button  bindtap='buttonzujian' class='bg-gradual-blue'>上传formid测试</button></kaming-button>
+</view>
+
+
+ <!-- banner 广告 -->
+ <view  class='testbutton'   >
+<view class="zx_banner" style="background: #fff;color:#333;">
+<zx-ad data-id="{{zxad.ad.banner[0]}}" adData="{{zxad.adData}}" bindclick="zxadClick" bindclose="zxadClose"
+class="zx_component">
+</zx-ad>
+</view>
+ </view>
+
+ 
+
+ <view  class='testbutton'   >
+  <button type='primary' style='margin-bottom:10px;' bindtap='startSetInter'>测试开始计时{{num}}</button>
+  <button type='primary' bindtap='endSetInter'>测试结束计时</button>
+ </view>

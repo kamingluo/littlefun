@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wl-ad": "/components/wlAD/wlAD",
+    "kaming-button": "/components/kaming-button/index",
+    "xm-ad": "/components/xmAD/xmAD"
+  }
+}

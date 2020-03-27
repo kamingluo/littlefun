@@ -1,0 +1,58 @@
+/* pages/task/extension/extension.wxss */
+.failtips{
+  margin-top: 50%;
+}
+.failtips{
+  font-size: 30rpx;
+}
+
+
+.body {
+  margin-top: 10%;
+}
+
+.body-body {
+  width: 80%;
+}
+
+.tupian image {
+  width: 564rpx;
+  height: 470rpx;
+  border-radius: 20rpx;
+}
+
+.name {
+  margin-top: 25rpx;
+}
+
+.name text {
+  font-size: 60rpx;
+  color: orange;
+  font-weight: 600;
+}
+
+.jieshao {
+  margin-top: 15rpx;
+}
+
+.jieshao text {
+  width: 500rpx;
+  font-size: 40rpx;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.anniu {
+  margin-top: 15rpx;
+}
+.anniu button{
+  width: 400rpx;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+
+.gdtad{
+  width: 94%;
+  border-radius: 15rpx;
+  margin-top: 15rpx;
+}

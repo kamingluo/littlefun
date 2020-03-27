@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "kaming-button": "/components/kaming-button/index",
+    "cu-custom": "/colorui/components/cu-custom",
+    "xm-ad": "/components/xmAD/xmAD"
+  }
+}

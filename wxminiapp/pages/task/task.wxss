@@ -1,0 +1,138 @@
+/* pages/task/task.wxss */
+
+page {
+  background-color: #382e66;
+  /* background-color: #1cbbb4; */
+}
+
+
+.dingwei{
+  position:absolute;
+}
+.gdtvideoad{
+  z-index: 888;
+ position: relative;
+  margin-top: -10rpx;
+  margin-left: -90rpx;
+  
+}
+
+
+
+.important{
+  color:#ff9700;
+  font-weight: 600;
+  font-size: 28rpx;
+}
+
+.top image {
+  width: 100%;
+}
+
+.u-img-slide {
+  border-radius: 10rpx;
+  width: 100%;
+  height: inherit;
+}
+
+.information-name {
+  height: 50rpx;
+  width: 300rpx;
+  margin-bottom: 20rpx;
+}
+
+.information-name text {
+  position: absolute;
+  color: white;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.task {
+  z-index: 999;
+  margin-bottom: 20rpx;
+}
+
+.task_list {
+  width: 90%;
+  height: 150rpx;
+}
+
+.box-body {
+  margin-top: -50rpx;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10rpx;
+}
+
+.box-body-image {
+  width: 20%;
+  height: 150rpx;
+}
+
+.box-body-image image {
+  width: 80rpx;
+  height: 100rpx;
+}
+
+.box-body-name {
+  width: 57%;
+  height: 150rpx;
+  margin-left: -40rpx;
+  color: #000;
+}
+
+progress {
+  width: 300rpx;
+}
+
+.progress text {
+  position: absolute;
+  margin-top: -30rpx;
+  margin-left: 110rpx;
+}
+
+.box-body-name-2 {
+  color: #666;
+  font-size: 25rpx;
+}
+
+.box-body-anniu {
+  margin-left: 20rpx;
+  width: 23%;
+  height: 150rpx;
+}
+
+.box-body-anniu button {
+  width: 150rpx;
+  height: 65rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.gdtbannerad{
+  position: absolute;
+  width: 50%;
+  height: 5rpx;
+  z-index: 999;
+  margin-top: -80rpx;
+  left:65%;
+  
+}
+
+.bannerad{
+  border-radius: 200rpx;
+}
+
+
+.bottombutton{
+  margin-top: 20rpx;
+   width: 550rpx;
+ }
+
+
+ .gdtad{
+  width: 94%;
+  border-radius: 15rpx;
+  margin-bottom: 10rpx;
+}

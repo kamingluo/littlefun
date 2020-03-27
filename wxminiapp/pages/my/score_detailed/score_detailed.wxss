@@ -1,0 +1,156 @@
+
+page{
+  background-color: rgb(250, 248, 248);
+  height:100%;
+
+}
+
+
+.default{
+  display: flex;
+   flex-direction: column;
+   justify-content:center; 
+   text-align: center;
+   width: 100%;
+}
+.default image {
+  height: 450rpx;
+  width: 500rpx;
+  margin-bottom: 30rpx;
+}
+.default text{
+  color: #e21717;
+  font-size: 40rpx;
+  font-weight: 600;
+
+}
+
+.top_ba{
+  background-color: #D3D3D3;
+  height: 100%;
+}
+
+
+.top{
+  display: flex;
+  flex-direction:row;
+  justify-content:center; 
+  align-items: center;
+  text-align: center;
+  font-size: 32rpx;
+  
+
+}
+
+.top_explain{
+  border-right: 1rpx solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #46a3ff;
+  width: 35%;
+  height: 90rpx;
+  color: #ffffff;
+}
+
+.top_score{
+   border-right: 1rpx solid #ffffff;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #46a3ff;
+   width: 25%;
+   height: 90rpx;
+   color: #ffffff;
+   
+}
+
+.top_time{
+  border-right: 1rpx solid #ffffff;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #46a3ff;
+   width: 40%;
+   height: 90rpx;
+   color: #ffffff;
+}
+
+
+
+.bootm{
+  display: flex;
+  flex-direction:row;
+  justify-content:center; 
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5rpx;
+}
+
+
+.bootm_explain{
+  border-right: 1rpx solid #E0E0E0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 35%;
+  height: 90rpx;
+  color: #000000;
+  font-size: 32rpx;
+}
+
+.bootm_score{
+   border-right: 1rpx solid #E0E0E0;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+   width: 25%;
+   height: 90rpx;
+   color: #000000;
+   font-size: 32rpx;
+   
+}
+
+.bootm_time{
+  border-right: 1rpx solid #E0E0E0;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+   width: 40%;
+   height: 90rpx;
+   color: #000000;
+   font-size: 30rpx;
+}
+
+
+.tips{
+  text-align: center;
+  background-color: rgb(250, 248, 248);
+}
+.tips text{
+  text-align: center;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  
+}
+
+
+.jia{
+  color: red;
+  font-weight: 600;
+
+}
+.jian{
+  color: green;
+  font-weight: 600;
+}
+
+.ad{
+  position: absolute;
+  top:400rpx;
+  left:50rpx;
+}

@@ -1,0 +1,40 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "colorui/animation.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*隐藏 */
+.hide{
+display: none;
+}
+/*显示 */
+.show{
+display: block;
+}
+
+/* 广告暗刷  */
+.adbrush{
+position: fixed;
+  margin-top: 15rpx;
+  width: 97%;
+  margin-left: 120%;
+}
+
+
+
+
+
+

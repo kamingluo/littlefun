@@ -1,0 +1,68 @@
+
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">猜拳</view>
+</cu-custom>
+
+
+
+<view class="container"  catchtouchmove="true" >
+
+ <view class='currentScore'><image src="../../../images/common/coin.svg" class='xin'></image><text id='currentScore'>{{coin}}</text></view>
+ <!--对比拳框  -->
+  <view class='chuquanbox'>
+   <view class='system'>
+    <image src='souces/bg.png' class='bg'></image>
+    <image src='{{liveimg}}' class='livimg'></image>
+   </view>
+   <view class='result' wx:if='{{stop}}'>{{result}}</view>
+   <view class='user'>
+    <image src='souces/bg.png' class='bg'></image>
+    <image src='{{userimg}}' class='livimg'></image>
+   </view>
+   </view>
+   <!--对比拳框  -->
+   <!--选择出拳框  -->
+    <view class='choose'>
+        <text>请先点击开始/继续，然后选择出拳</text>
+        <view class='imgBox'  >
+        <block wx:for='{{imgs}}' wx:key="caiquan" >
+             <image src='souces/{{item}}' bindtap='chooseimg' data-id='{{index}}'></image>
+        </block>
+        </view>
+        <kaming-button>
+        <view class='contunueBtn' bindtap='continuego'>{{word}}</view>
+        </kaming-button>
+    </view>
+   <!--选择出拳框  -->
+
+   <!-- 获取积分和点击兑换 -->
+    <view class='bottombtn'>
+     <text   bindtap='exchange'  >兑换商品</text>
+     <text   bindtap='havecoin' >获取金币</text>
+    </view>
+   <!-- 获取积分和点击兑换 -->
+   <text class='shuoming'>游戏说明：100金币一局,赢了获取100金币，输了扣除100金币，平局不扣金币</text>
+
+
+   <!-- 广点通banner广告开始-->
+<view  wx:if="{{gdtaddisplay}}" >
+  <view class='gdtad'   style="opacity: 0" >
+    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-6b1bfd8a209c7e92" unit-id="adunit-6b1bfd8a209c7e92"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+

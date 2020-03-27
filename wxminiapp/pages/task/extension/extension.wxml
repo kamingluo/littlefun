@@ -1,0 +1,78 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{state}}">
+  <view slot="backText"   bindtap='index' >更多好玩</view>
+  <view slot="content">一点好玩</view>
+</cu-custom>
+
+<view class='cu-load load-modal'  wx:if="{{loadModal}}" >
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/common/loading.svg' class='png' mode='aspectFit'></image>
+  <view  style='margin-top: 10rpx;'  class='gray-text'>加载中</view>
+</view>
+
+<view wx:if="{{extensiondata==null}}" class='centered  failtips  '>
+  <text>跳转参数错误啦！</text>
+</view>
+
+<view class='body centered' wx:else>
+
+  <view class='body-body  '>
+
+    <view class='container'>
+      <view class='tupian'>
+        <image src="{{extensiondata.imgurl}}"></image>
+      </view>
+      <view class='name'>
+        <text>{{extensiondata.name}}</text> </view>
+      <view class='jieshao '>
+        <text>{{extensiondata.describe}}</text> </view>
+      <view class='anniu'>
+        <kaming-button>
+          <button class='bg-gradual-blue' bindtap='clickjump'>立即跳转</button>
+        </kaming-button>
+      </view>
+    </view>
+
+
+    <!--ad刷开始-->
+    <view class='adbrush'>
+      <!--小盟广告开始-->
+      <view>
+        <view>
+          <view class="xm_banner" style="width:100%">
+            <xm-ad data-id="{{xmad.ad.banner2}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
+          </view>
+        </view>
+        <view>
+          <view class="xm_banner" style="width:100%">
+            <xm-ad data-id="{{xmad.ad.banner3}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
+          </view>
+        </view>
+        <view>
+          <view class="xm_banner" style="width:100%">
+            <xm-ad data-id="{{xmad.ad.banner4}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
+          </view>
+        </view>
+        <view>
+          <view class="xm_banner" style="width:100%">
+            <xm-ad data-id="{{xmad.ad.banner5}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
+          </view>
+        </view>
+      </view>
+      <!--小盟广告结束-->
+    </view>
+    <!--ad刷结束-->
+
+  </view>
+
+</view>
+
+
+
+
+<!-- 广点通banner广告开始-->
+<view class='centered'  wx:if="{{extensiondata != null}}" >
+  <view class='gdtad'>
+     <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-9d16e8380e901760" unit-id="adunit-9d16e8380e901760"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->

@@ -1,0 +1,132 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.2",
+	"appid": "wxc335c3cf09a7a39c",
+	"projectname": "littlefun",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": 0,
+					"name": "分享进入",
+					"pathName": "pages/index/index",
+					"query": "channel=6666&master_id=18001",
+					"scene": 1047
+				},
+				{
+					"id": 1,
+					"name": "我的页面",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": 1011
+				},
+				{
+					"id": 2,
+					"name": "测试页面",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": 3,
+					"name": "任务页面",
+					"pathName": "pages/task/task",
+					"query": "channel=1001",
+					"scene": 1001
+				},
+				{
+					"id": 4,
+					"name": "兑换页面",
+					"pathName": "pages/exchange/exchange",
+					"query": "",
+					"scene": 1011
+				},
+				{
+					"id": 5,
+					"name": "我的二维码",
+					"pathName": "pages/my/qrcode/qrcode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "我的好友",
+					"pathName": "pages/friends/friends",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "骰子页面",
+					"pathName": "pages/game/dice/dice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "兑换列表",
+					"pathName": "pages/my/exchange_detailed/exchange_detailed",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "单个推广页",
+					"pathName": "pages/task/extension/extension",
+					"query": "state=0",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "二维码",
+					"pathName": "pages/my/qrcode/qrcode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "十秒挑战页面",
+					"pathName": "pages/game/tenseconds/tenseconds",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

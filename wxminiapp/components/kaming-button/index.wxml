@@ -1,0 +1,6 @@
+<!--component/xm-button/index.wxml-->
+<form class='button-form' bindsubmit="formSubmit" report-submit="true" catchtap='{{catch ? "catchtap" : ""}}'>
+  <button formType="submit"  bindtap='tapEvent'  class="button-wrap" open-type='{{openType}}' bindgetuserinfo="bindgetuserinfo">
+    <slot></slot>
+  </button>
+</form>

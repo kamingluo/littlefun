@@ -1,0 +1,78 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">金币明细</view>
+</cu-custom>
+
+
+
+<view class='cu-load load-modal'  wx:if="{{loadModal}}" >
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='../../../images/common/loading.svg' class='png' mode='aspectFit'></image>
+  <view  style='margin-top: 10rpx;'  class='gray-text'>加载中</view>
+</view>
+
+
+<view>
+
+
+  <view wx:if="{{userscorerecord.length <= 0}}">
+    <view class='default'>
+      <view>
+        <image src='http://littlebox.luojiaming.vip/default.png'></image>
+      </view>
+      <view>
+        <text>你三天内还没有收入呢</text>
+      </view>
+    </view>
+  </view>
+
+  
+
+
+
+  <view wx:else class='top_ba'>
+    <view class='top'>
+      <view class='top_explain'>
+        <text>操作</text>
+      </view>
+      <view class='top_score'>
+        <text>金币数</text>
+      </view>
+      <view class='top_time'>
+        <text>时间</text>
+      </view>
+    </view>
+    <view>
+      <view class="bootm" wx:for="{{userscorerecord}}" wx:key="item">
+        <view class='bootm_explain'>
+          <text>{{item.explain}}</text>
+        </view>
+        <view class='bootm_score'>
+        <text  class='jia' wx:if="{{item.state==0}}">加{{item.score}}</text>
+          <text  class='jian' wx:else>减{{item.score}}</text>
+        </view>
+        <view class='bootm_time'>
+          <text>{{item.create_time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='tips'>
+      <text>-----系统只保存最近七天的记录-----</text>
+    </view>
+  </view>
+
+
+
+</view>
+
+
+
+
+
+<!-- 广点通banner广告开始-->
+<view class='centered  ad'  wx:if="{{gdtaddisplay}}" >
+  <view class='gdtad'   style="opacity: 0" >
+    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-9d16e8380e901760" unit-id="adunit-9d16e8380e901760"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->

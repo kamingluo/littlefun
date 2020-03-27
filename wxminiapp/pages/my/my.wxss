@@ -1,0 +1,139 @@
+/* pages/my/my.wxss */
+
+
+.dingwei{
+  position:absolute;
+}
+.adanshua{
+    position: relative;
+   margin-top: 160rpx;
+   margin-left: -80rpx;
+}
+
+
+.addminiapptips{
+  position: fixed;
+  left: 55%;
+  z-index: 999;
+}
+.addminiapptips image{
+  width: 250rpx;
+  height: 150rpx;
+}
+
+
+.top{
+  height: 240rpx;
+  width: 100%;
+
+}
+.user{
+  height: 240rpx;
+  display: flex;
+   flex-direction:row;
+   justify-content:space-around;
+}
+.userAvatar{
+   display: flex;
+   flex-direction:row;
+   justify-content:space-around;
+   align-items:center;
+  color: #fff;
+}
+.userAvatarurl{
+overflow:hidden;  
+display: block;   
+width: 160rpx;  
+height: 160rpx; 
+border-radius: 50%; 
+border: 2px solid #fff;  
+box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.username{
+display: flex;
+flex-direction: column;
+justify-content:space-around;
+align-items: left;
+flex-shrink: 0;
+flex-basis: 400rpx;
+}
+.userNickName{
+  display: flex;
+  position:relative;
+  font-size: 45rpx;
+  right:30rpx;  
+  top:25rpx; 
+  color: #ffffff;
+}
+
+.id{
+  display: flex;
+  position:relative;
+  font-size: 40rpx;
+  right:30rpx; 
+  bottom: 10rpx;
+  color: #ffffff;
+
+}
+
+.erweima{
+  position: fixed;
+  margin-top: -95rpx;
+  margin-left: 280rpx;
+
+  width: 120rpx;
+  height: 120rpx;
+  
+}
+
+
+.score{
+  margin-bottom: 8rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  text-align: center;
+  align-items:center;
+  background-color: #ffffff;
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.score_text{
+  display: flex;
+  align-items:center;
+  font-size: 40rpx;
+}
+
+.score_text text{
+  font-size: 50rpx;
+  font-weight: 600;
+} 
+
+.score_text image{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 10rpx;
+}
+
+.score_button button{
+  color: #ffffff;
+  display: flex;
+  align-items:center;
+  height: 70rpx;
+  width: 190rpx;
+  font-size: 30rpx;
+  margin-left: 80rpx;
+
+}
+
+.iconsize{
+  font-size: 40rpx;
+}
+
+.gdtad{
+  width: 94%;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+}
