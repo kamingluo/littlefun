@@ -32,7 +32,7 @@
 		"beforePreview": "",
 		"beforeUpload": ""
 	},
-	"qqLibVersion": "1.8.5",
+	"qqLibVersion": "1.13.0",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -54,10 +54,10 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "分享",
+					"name": "111",
 					"pathName": "pages/index/index",
 					"query": "",
-					"scene": "1008"
+					"scene": "2001"
 				}
 			]
 		}

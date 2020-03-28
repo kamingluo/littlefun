@@ -314,7 +314,7 @@ Page({
       service: 'task/index/taskconfig',
       method: 'GET',
       success: res => {
-        //console.log('任务页面配置信息', res.taskconfig);
+        console.log('任务页面配置信息', res.taskconfig);
         this.setData({
           taskconfig: res.taskconfig,
         })

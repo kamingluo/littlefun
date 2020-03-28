@@ -26,7 +26,9 @@ App({
 
   scene: function (scene) {
     // wx.setStorageSync('scene', scene)
-    if (scene == 2001 || scene == 2016 || scene==1011 ) {
+    // if (scene == 2001 || scene == 2016 || scene==1011 ) { 2001是应用市场榜单
+    if ( scene == 2016 || scene==1011 ) {
+    // if ( scene == 1111 ) { //测试用
       //console.log("隐藏")
       this.globalData.display = false;
     }
