@@ -1,0 +1,140 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">猜大小</view>
+</cu-custom>
+
+
+<view>
+  <template name="first">
+    <view class="dice-box first">
+      <span class="dice-point"></span>
+    </view>
+  </template>
+  <template name="second">
+    <view class="dice-box second">
+      <span class="dice-point"></span>
+      <span class="dice-point self-flex-end"></span>
+    </view>
+  </template>
+  <template name="third">
+    <view class="dice-box third">
+      <span class="dice-point"></span>
+      <span class="dice-point self-flex-center"></span>
+      <span class="dice-point self-flex-end"></span>
+    </view>
+  </template>
+  <template name="fourth">
+    <view class="dice-box fourth">
+      <view class="column">
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+      </view>
+      <view class="column">
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+      </view>
+    </view>
+  </template>
+  <template name="fifth">
+    <view class="dice-box fifth">
+      <view class="column">
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+      </view>
+      <view class="column justify-center1">
+        <span class="dice-point"></span>
+      </view>
+      <view class="column">
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+      </view>
+    </view>
+  </template>
+  <template name="sixth">
+    <view class="dice-box sixth">
+      <view class="column">
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+      </view>
+      <view class="column">
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+        <span class="dice-point"></span>
+      </view>
+    </view>
+  </template>
+  <view>
+    <view class="game-info">
+      <view>
+        <view class="score centered">
+          <image src="../../../images/common/coin.svg"></image>
+          <text>{{ score }}</text>
+        </view>
+      </view>
+    </view>
+    <view class="dice-body">
+      <block wx:for="{{showDiceTemplateArray}}" wx:key="*this">
+        <template is="{{item}}" />
+      </block>
+    </view>
+    <view class="chip-body">
+      <view class="chips">
+        <kaming-button>
+          <view class="column">
+            <image mode='aspectFit' data-amount="50" bindtap="putChip" class="w120 h120 mr10 mb10" src="http://qiniu.luojiaming.vip//game/littlechip-50.png"></image>
+            <image mode='aspectFit' data-amount="100" bindtap="putChip" class="w120 h120 mr10" src="http://qiniu.luojiaming.vip//game/littlechip-100.png"></image>
+          </view>
+        </kaming-button>
+        <kaming-button>
+          <view class="column">
+            <image mode='aspectFit' data-amount="200" bindtap="putChip" class="w120 h120 mb10" src="http://qiniu.luojiaming.vip//game/littlechip-200.png"></image>
+            <image mode='aspectFit' data-amount="500" bindtap="putChip" class="w120 h120" src="http://qiniu.luojiaming.vip//game/littlechip-500.png"></image>
+          </view>
+        </kaming-button>
+      </view>
+      <view class="put-chips" bindtouchmove="removeBet" bindtouchend="removeBetEnd">
+        <image mode='aspectFit' class="put-chips-img" src="http://littlebox.luojiaming.vip/image/game/put-chips.png">
+        </image>
+        <view hidden="{{ showBet }}" class="put-chips-amount {{chipsClass}}">{{ bet > 0? bet:'下注金额' }}</view>
+      </view>
+    </view>
+
+    <view class="game-operate">
+      <button data-type="big" bindtap="changeDice">
+        <span>大</span>
+        <span>1:1</span>
+      </button>
+
+      <!--<button data-type="leopard" bindtap="changeDice">
+            <span>豹子</span>
+            <span>1:24</span>
+        </button>-->
+
+      <button>
+        <span class="shuoming">选择筹码</span>
+        <span class="shuoming">再选大小</span>
+      </button>
+
+      <button data-type="small" bindtap="changeDice">
+        <span>小</span>
+        <span>1:1</span>
+      </button>
+    </view>
+  </view>
+  <view hidden="{{ !showBet }}" class="moving-chips-amount" style="top: {{finger.Y}}px; left: {{finger.X}}px;">{{bet}}</view>
+  <view class='tips'>
+    <text>规则:  3到10点为小，11到18点为大</text> </view>
+
+</view>
+
+
+
+
+<!-- 广点通banner广告开始-->
+<view   class='ad'  wx:if="{{gdtaddisplay}}" >
+  <view class='gdtad'  style="opacity: 0" >
+    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="4f5eb56dfb9f9dce256b65b622c17dd6" unit-id="4f5eb56dfb9f9dce256b65b622c17dd6"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->

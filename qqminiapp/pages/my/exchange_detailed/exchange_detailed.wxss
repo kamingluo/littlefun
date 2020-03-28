@@ -1,0 +1,59 @@
+/* pages/my/exchange_detailed/exchange_detailed.wxss */
+
+
+
+.default{
+  display: flex;
+   flex-direction: column;
+   justify-content:center; 
+   text-align: center;
+   width: 100%;
+}
+.default image {
+  height: 450rpx;
+  width: 500rpx;
+  margin-bottom: 30rpx;
+}
+.default text{
+  color: #e21717;
+  font-size: 40rpx;
+  font-weight: 600;
+
+}
+.default  button{
+  width: 400rpx;
+  margin-top: 30rpx;
+  font-weight: 600;
+
+}
+.exchangelist{
+   display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap:wrap;
+
+  width: 92%;
+  height: 150rpx;
+  margin-top: 10rpx;
+}
+
+.exchangedata{
+ height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.exchangegood{
+   font-size: 30rpx;
+   margin-bottom: 20rpx;
+   color: #000000;
+}
+
+.exchangstate{
+  font-size: 32rpx;
+  font-weight: 600;
+
+}
+

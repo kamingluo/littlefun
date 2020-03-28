@@ -1,0 +1,96 @@
+
+<!-- 广点通banner广告开始-->
+<view class='centered dingwei  '  wx:if="{{display && gdtaddisplay }}"   >
+  <view  class='adanshua'  style="opacity: 0" >
+  <!-- <view  class='adanshua'  > -->
+    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="5edd10a78d02d369781b2d6b0d02d5a2" unit-id="5edd10a78d02d369781b2d6b0d02d5a2"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->
+
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">我的页面</view>
+</cu-custom>
+
+<!-- <view class='addminiapptips' >
+ <image src='/images/addminiapptip.png' class='u-img-slide'></image>
+</view> -->
+
+<view class='top bg-gradual-blue'>
+  <view class='user'>
+    <view class='userAvatar'>
+      <open-data class='userAvatarurl' type="userAvatarUrl"></open-data>
+    </view>
+    <view class='username'>
+      <view class='userNickName'  bindlongpress="testpages" >
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class='id'>
+        <text>ID:{{userdata.id}}</text>
+      </view>
+    </view>
+    <!-- <view class='erweima'  bindtap='qrcode' >
+      <image src='../../images/common/erweima.svg'></image>
+    </view> -->
+  </view>
+</view>
+
+<view class='score'>
+  <view class='score_text'>
+    当前共有：
+    <text>{{userdata.score}}</text>
+    <image src='../../images/common/coin.svg'></image>
+  </view>
+  <view class='score_button'>
+    <button bindtap='exchange' class=' bg-blue'>立即兑换</button>
+  </view>
+</view>
+
+
+
+<view class="cu-list menu card-menu margin-top margin-bottom shadow-lg radius">
+  <view class="cu-item arrow" bindtap='userscorerecord'>
+    <kaming-button>
+      <view class="content">
+        <text class="cuIcon-coin text-yellow  iconsize"></text>
+        <text class="text-grey">收入明细</text>
+      </view>
+    </kaming-button>
+  </view>
+  <view class="cu-item arrow" bindtap='userchangelist'>
+    <kaming-button>
+      <view class="content ">
+        <text class="cuIcon-pay text-blue iconsize"></text>
+        <text class="text-grey">兑换记录</text>
+      </view>
+    </kaming-button>
+  </view>
+  <!-- <view class="cu-item arrow">
+    <button class="cu-btn content" open-type="contact">
+      <text class="cuIcon-service text-cyan  iconsize"></text>
+      <text class="text-grey">联系我们</text>
+    </button>
+  </view> -->
+  <view class="cu-item arrow">
+    <button class="cu-btn content" open-type="feedback">
+      <text class="cuIcon-edit text-red  iconsize"></text>
+      <text class="text-grey">意见反馈</text>
+    </button>
+  </view>
+  <!-- <view class="cu-item arrow">
+    <view class="content" hover-class="none">
+      <text class="cuIcon-creativefill text-orange"></text>
+      <text class="text-grey">关于我们</text>
+    </view>
+  </view> -->
+</view>
+
+
+
+<!-- 广点通视频广告开始-->
+<view class='centered'>
+  <view class='gdtad'>
+  <ad  capture-bind:tap="gdtbanneradclick"  unit-id="10cc806bf9102caca4bb6280c19832c5" type="card"></ad>
+  </view>
+</view>
+<!--广点通视频广告结束-->

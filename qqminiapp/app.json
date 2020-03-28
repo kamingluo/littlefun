@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/exchange/exchange",
+    "pages/task/task",
+    "pages/friends/friends",
+    "pages/task/extension/extension",
+    "pages/my/score_detailed/score_detailed",
+    "pages/my/exchange_detailed/exchange_detailed",
+    "pages/my/qrcode/qrcode",
+    "pages/game/caiquan/caiquan",
+    "pages/game/dice/dice",
+    "pages/game/tenseconds/tenseconds",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+"navigateToMiniProgramAppIdList": [
+  "1109683394",
+  "1109605951"
+],
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#d0d0d0",
+    "selectedColor": "#0066FF",
+    "backgroundColor": "#ffffff",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/config/index.png",
+        "selectedIconPath": "images/config/sindex.png"
+      },
+      {
+        "pagePath": "pages/task/task",
+        "text": "任务",
+        "iconPath": "images/config/task.png",
+        "selectedIconPath": "images/config/stask.png"
+      },
+      {
+        "pagePath": "pages/friends/friends",
+        "text": "好友",
+        "iconPath": "images/config/friends.png",
+        "selectedIconPath": "images/config/sfriends.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/config/my.png",
+        "selectedIconPath": "images/config/smy.png"
+      }
+    ]
+  }
+}

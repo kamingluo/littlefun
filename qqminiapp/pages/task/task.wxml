@@ -1,0 +1,235 @@
+<!-- <cu-custom bgColor="bg-gradual-purple">
+  <view slot="content">任务页面</view>
+</cu-custom> -->
+
+
+<view class='top'>
+  <image src='http://miniapplittlefun.gzywudao.top/task/topbcg.png'></image>
+  <!-- <image src='/images/common/test.png'></image> -->
+</view>
+
+
+<view class='body'>
+
+  <view class='centered'>
+    <view class='information-name centered '>
+      <image src='http://miniapplittlefun.gzywudao.top/task/a1777e52d1144d8b2448108cb18aab3.png' class='u-img-slide'></image>
+      <text>我的任务</text>
+    </view>
+  </view>
+
+
+  <view class='task centered' wx:if="{{display && addweixin && taskconfig.addweixinscore > 10  }}">
+    <view class='task_list bg-img  u-img-slid padding-tb-xl' style="background-image: url('http://miniapplittlefun.gzywudao.top/task/block_content_bg.png');">
+      <view class='box-body'>
+        <view class=' box-body-image centered '>
+          <image src='/images/common/cash.png'></image>
+        </view>
+        <view class=' box-body-name  centered'>
+          <view>
+            <view class='progress'>
+              <progress percent="{{0/100}}" stroke-width="13" border-radius="10" backgroundColor="#EEDFCC" color="orange" active active-mode="forwards"> </progress>
+              <text>0/1</text>
+            </view>
+            <!-- <view class='box-body-name-2 '>分享好友，每天<text class='important'  >{{taskconfig.sharenum}}</text>次机会</view> -->
+            <view class='box-body-name-2 '>添加客服微信回复你的ID</view>
+            <view class='box-body-name-2 '>添加成功奖励
+              <text class='important'>{{taskconfig.addweixinscore}}金币</text>
+            </view>
+          </view>
+        </view>
+        <view class='box-body-anniu centered '>
+          <kaming-button>
+            <button class='bg-gradual-purple' bindtap='addweixinkefu'>去添加</button>
+          </kaming-button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+  <view class='task centered' wx:if="{{display && gdtaddisplay }}">
+    <view class='task_list bg-img  u-img-slid padding-tb-xl' style="background-image: url('http://miniapplittlefun.gzywudao.top/task/block_content_bg.png');">
+      <view class='box-body'>
+        <view class=' box-body-image centered '>
+          <image src='/images/common/cash.png'></image>
+        </view>
+        <view class=' box-body-name  centered'>
+          <view>
+            <view class='progress'>
+              <progress percent="{{usertodaytask.gdtbanner/taskconfig.bannernum*100}}" stroke-width="13" border-radius="10" backgroundColor="#EEDFCC" color="orange" active active-mode="forwards"> </progress>
+              <text>{{usertodaytask.gdtbanner}}/{{taskconfig.bannernum}}</text>
+            </view>
+            <view class='box-body-name-2 '>点击体验
+              <text class='important'>{{taskconfig.bannertime}}</text> 秒,每天
+              <text class='important'>{{taskconfig.bannernum}}</text>次机会</view>
+            <view class='box-body-name-2 '>体验完成奖励
+              <text class='important'>{{taskconfig.bannerscore}}金币</text>/次</view>
+          </view>
+        </view>
+        <view class='box-body-anniu centered '>
+          <view class='gdtbannerad' style="opacity: 0">
+            <!-- <view  class='gdtbannerad'   > -->
+            <ad class='bannerad' capture-bind:tap="gdtbannerclick" data-adid="9135f8cdfac7c7fd3b2ba0495d6125df" unit-id="9135f8cdfac7c7fd3b2ba0495d6125df"></ad>
+          </view>
+          <kaming-button wx:if="{{usertodaytask.gdtbanner < taskconfig.bannernum}}">
+            <button class='bg-gradual-purple' bindtap='nobannerad'>去体验看</button>
+          </kaming-button>
+          <kaming-button wx:else>
+            <button class='bg-grey'>已完成</button>
+          </kaming-button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class='task centered' wx:if="{{ taskconfig.signscore > 5 }}">
+    <view class='task_list bg-img  u-img-slid padding-tb-xl' style="background-image: url('http://miniapplittlefun.gzywudao.top/task/block_content_bg.png');">
+      <view class='box-body'>
+        <view class=' box-body-image centered '>
+          <image src='/images/common/cash.png'></image>
+        </view>
+        <view class=' box-body-name  centered'>
+          <view>
+            <view class='progress'>
+              <progress percent="{{usertodaytask.sign/1*100}}" stroke-width="13" border-radius="10" backgroundColor="#EEDFCC" color="orange" active active-mode="forwards"> </progress>
+              <text>{{usertodaytask.sign}}/1</text>
+            </view>
+            <view class='box-body-name-2 '>签到，每天
+              <text class='important'>1</text>次机会</view>
+            <view class='box-body-name-2 '>签到完成奖励
+              <text class='important'>{{ taskconfig.signscore}}金币</text>
+            </view>
+          </view>
+        </view>
+        <view class='box-body-anniu centered '>
+          <kaming-button wx:if="{{usertodaytask.sign < 1}}">
+            <button class='bg-gradual-purple' bindtap='sign'>签到</button>
+          </kaming-button>
+          <kaming-button wx:else>
+            <button class='bg-grey' bindtap='signcomplete'>已完成</button>
+          </kaming-button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class='task centered' wx:if="{{display&&gdtaddisplay}}">
+    <view class='task_list bg-img  u-img-slid padding-tb-xl' style="background-image: url('http://miniapplittlefun.gzywudao.top/task/block_content_bg.png');">
+      <view class='box-body'>
+        <view class=' box-body-image centered '>
+          <image src='/images/common/cash.png'></image>
+        </view>
+        <view class=' box-body-name  centered'>
+          <view>
+            <view class='progress'>
+              <progress percent="{{usertodaytask.gdtvideo/taskconfig.videonum*100}}" stroke-width="13" border-radius="10" backgroundColor="#EEDFCC" color="orange" active active-mode="forwards"> </progress>
+              <text>{{usertodaytask.gdtvideo}}/{{taskconfig.videonum}}</text>
+            </view>
+            <view class='box-body-name-2 ' wx:if="{{display}}">观看视频，每天
+              <text class='important'>{{taskconfig.videonum}}</text>次机会</view>
+            <view class='box-body-name-2 '>观看完成奖励
+              <text class='important'>{{taskconfig.videoscore}}金币</text>/次</view>
+          </view>
+        </view>
+        <view class='box-body-anniu centered '>
+          <kaming-button wx:if="{{usertodaytask.gdtvideo < taskconfig.videonum}}">
+            <button class='bg-gradual-purple' bindtap='videoad'>去观看</button>
+          </kaming-button>
+          <kaming-button wx:else>
+            <button class='bg-grey'>已完成</button>
+          </kaming-button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class='task centered' wx:if="{{display && taskconfig.sharescore > 10}}">
+    <view class='task_list bg-img  u-img-slid padding-tb-xl' style="background-image: url('http://miniapplittlefun.gzywudao.top/task/block_content_bg.png');">
+      <view class='box-body'>
+        <view class=' box-body-image centered '>
+          <image src='/images/common/cash.png'></image>
+        </view>
+        <view class=' box-body-name  centered'>
+          <view>
+            <view class='progress'>
+              <progress percent="{{usertodaytask.share/taskconfig.sharenum*100}}" stroke-width="13" border-radius="10" backgroundColor="#EEDFCC" color="orange" active active-mode="forwards"> </progress>
+              <text>{{usertodaytask.share}}/{{taskconfig.sharenum}}</text>
+            </view>
+            <!-- <view class='box-body-name-2 '>分享好友，每天<text class='important'  >{{taskconfig.sharenum}}</text>次机会</view> -->
+            <view class='box-body-name-2 '>额外获得好友收益的
+              <text class='important'>20%</text>
+            </view>
+            <view class='box-body-name-2 '>分享成功奖励
+              <text class='important'>{{taskconfig.sharescore}}金币</text>
+            </view>
+          </view>
+        </view>
+        <view class='box-body-anniu centered '>
+          <kaming-button wx:if="{{usertodaytask.share <  taskconfig.sharenum}}">
+            <button class='bg-gradual-purple' open-type='share'>去分享</button>
+          </kaming-button>
+          <!-- <button class='bg-gradual-purple'   wx:if="{{usertodaytask.share < taskconfig.sharenum}}" >去分享</button> -->
+          <!-- <button class='bg-grey' wx:else   >已完成</button> -->
+          <kaming-button wx:else>
+            <button class='bg-grey'>已完成</button>
+          </kaming-button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+  <!-- 广点通banner广告开始-->
+  <view class='centered' wx:if="{{!display}}">
+    <view class='gdtad'>
+      <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="9135f8cdfac7c7fd3b2ba0495d6125df" unit-id="9135f8cdfac7c7fd3b2ba0495d6125df"></ad>
+    </view>
+  </view>
+  <!-- 广点通banner广告结束-->
+
+
+
+
+  <view class='centered' wx:if="{{display}}">
+    <kaming-button open-type='share' class='bottombutton'>
+      <image src='http://miniapplittlefun.gzywudao.top/task/share_button.png' mode='widthFix'></image>
+    </kaming-button>
+  </view>
+
+
+</view>
+
+
+
+
+
+<!--广告暗刷开始-->
+<view class='adbrush'>
+
+
+</view>
+<!--广告暗刷结束-->

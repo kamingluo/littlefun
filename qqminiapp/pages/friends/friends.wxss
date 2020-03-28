@@ -1,0 +1,274 @@
+/* pages/friends/friends.wxss */
+
+
+
+.friends{
+  margin-top: 10rpx;
+}
+.friends text{
+  font-size: 50rpx;
+  color: #f37b1d;
+  font-weight: 600;
+  margin-top: 15rpx;
+}
+.friends button{
+  margin-top: 40rpx;
+  width: 60%;
+}
+
+
+ .gdtad2{
+    position: fixed;
+   margin-top: -80rpx;
+  border-radius: 15rpx;
+}
+
+ .gdtad{
+   margin-top: 15rpx;
+  width: 98%;
+  border-radius: 15rpx;
+  margin-bottom: 10rpx;
+}
+
+
+.body {
+  background-color: #fff;
+  height: 120rpx;
+}
+
+.information {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 95%;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+
+.information image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.import {
+  font-size: 45rpx;
+}
+
+.explain {
+  font-weight: bold;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  height: 230rpx;
+  width: 100%;
+  background-color: #fff;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.explain_top_text {
+  color: #ff8c00;
+}
+
+.explain_shuoming {
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 140rpx;
+  background-color: #fff;
+  border-radius: 30rpx;
+  box-shadow: 1px 1px 2px 3px #d3d3d3;
+}
+
+.explain image {
+  height: 110rpx;
+  width: 110rpx;
+}
+
+.explain_shuoming2 {
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.explain_shuoming3 {
+  font-size: 35rpx;
+  color: red;
+}
+
+
+
+
+
+.top{
+  display: flex;
+  flex-direction:row;
+  justify-content:center; 
+  align-items: center;
+  text-align: center;
+  font-size: 32rpx;
+  
+
+}
+
+.top_explain{
+  border-right: 1rpx solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #46a3ff;
+  width: 35%;
+  height: 90rpx;
+  color: #ffffff;
+}
+
+.top_score{
+   border-right: 1rpx solid #ffffff;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #46a3ff;
+   width: 25%;
+   height: 90rpx;
+   color: #ffffff;
+   
+}
+
+.top_time{
+  border-right: 1rpx solid #ffffff;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #46a3ff;
+   width: 40%;
+   height: 90rpx;
+   color: #ffffff;
+}
+
+.bootm{
+  display: flex;
+  flex-direction:row;
+  justify-content:center; 
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5rpx;
+}
+
+
+.bootm_explain{
+  border-right: 1rpx solid #E0E0E0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 35%;
+  height: 90rpx;
+  color: #000000;
+  font-size: 32rpx;
+}
+
+.bootm_score{
+   border-right: 1rpx solid #E0E0E0;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+   width: 25%;
+   height: 90rpx;
+   color: #000000;
+   font-size: 32rpx;
+   
+}
+
+.bootm_time{
+  border-right: 1rpx solid #E0E0E0;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+   width: 40%;
+   height: 90rpx;
+   color: #000000;
+   font-size: 30rpx;
+}
+
+
+
+.default{
+  display: flex;
+   flex-direction: column;
+   justify-content:center; 
+   text-align: center;
+   width: 100%;
+   margin-top: -30rpx;
+}
+.default image {
+  height: 350rpx;
+  width: 400rpx;
+  
+}
+.default text{
+  color: #aaaaaa;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+
+
+
+.bootm_text{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #696969;
+}
+
+.share{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  height: 120rpx;
+  margin-bottom: 2rpx;
+  box-shadow: 1px 1px 2px 3px #aaaaaa;
+  
+}
+
+
+
+
+.sharebody{
+   display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 95%;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+.wxlogo{
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 10rpx;
+}
+.xian{
+  background-color: #01111675;
+  width: 4rpx;
+  height: 120rxp;
+  font-size: 100rpx;
+  color: #fff;
+
+}
+
+.erweima{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 10rpx;
+}

@@ -1,0 +1,162 @@
+/* pages/exchange/exchange.wxss */
+
+.box {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 96%;
+  margin-top: 10rpx;
+}
+
+.goods {
+  width: 48%;
+  height: 520rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column; /**子元素上下排列*/
+  justify-content: center;
+  align-items: center;
+}
+
+.goods-image {
+  
+  width: 90%;
+}
+
+.goods-image image {
+  border-radius: 15rpx;
+  height: 290rpx;
+}
+
+.goods-introduce{
+  width: 94%;
+  margin-top: 10rpx;
+}
+.goods-introduce  text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #000000;
+  font-weight: 600;
+  font-size: 30rpx;
+}
+
+.goods-price{
+  margin-top: 10rpx;
+}
+.goods-price image{
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.goods-price text{
+  font-size: 30rpx;
+  color: red;
+  font-weight: 600;
+
+}
+.goods-number{
+  margin-left: 30rpx;
+  font-size: 25rpx;
+}
+
+
+.line{
+  margin-top: 5rpx;
+  width: 100%;
+  height: 1px;
+  background-color: #c2c0c0;
+}
+
+.exchange{
+  margin-top: 10rpx;
+
+}
+.exchange image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.exchange  text{
+  color: #1296db;
+  font-weight: 700;
+  font-size: 35rpx;
+
+}
+
+
+.gdtad{
+  width: 700rpx;
+  border-radius: 15rpx;
+  margin-bottom: 10rpx;
+}
+
+
+
+.frame {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame-background {
+  background-color: #fff;
+  border-radius: 30rpx;
+  box-shadow: 1px 1px 1px 3px #d3d3d3;
+  width: 650rpx;
+  height: 500rpx;
+}
+.frame-body{
+  
+   width: 550rpx;
+
+}
+
+.fram-title{
+
+  margin-bottom: 20rpx;
+}
+.fram-title-text{
+  font-size: 40rpx;
+  font-weight: 600;
+  color: orange;
+}
+.cashnumber{
+  font-size: 50rpx;
+  color: red;
+}
+
+.fram-button{
+  margin-top: 10rpx;
+}
+.fram-button button{
+  width: 250rpx;
+  font-size: 30rpx;
+}
+.fram-tips{
+  margin-top: 15rpx;
+  font-size: 25rpx;
+}
+.frame-close {
+  margin-top: 20rpx;
+  color: #8b7e66;
+}
+
+
+.insertadclose{
+  margin-top: 100rpx;
+}
+
+.insertadclose image{
+  width: 70rpx;
+  height:70rpx;
+}

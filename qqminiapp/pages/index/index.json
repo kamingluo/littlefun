@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "kaming-button": "/components/kaming-button/index"
+  }
+}

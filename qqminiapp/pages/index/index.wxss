@@ -1,0 +1,128 @@
+.miniappname{
+  font-size: 38rpx;
+  font-weight: 600;
+  color: #ffffff;
+}
+.miniappname  image{
+  width: 80%;
+  height: 60rpx;
+  margin-right: 180rpx;
+  margin-top: 5rpx;
+
+}
+.u-wrp-bnr {
+  width: 88%;
+  height: 250rpx;
+  display: block;
+  position: relative;
+  top: 50rpx;
+}
+.u-img-slide {
+  border-radius: 10rpx;
+  width: 100%;
+  height: inherit;
+}
+.gdtad{
+  width: 94%;
+  border-radius: 15rpx;
+  margin-top: 5rpx;
+}
+
+.main-main{
+  margin-top: 15rpx;
+}
+
+.information{
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  width: 95%;
+}
+.information-name{
+  height: 50rpx;
+  width: 300rpx;
+  margin-bottom: 20rpx;
+}
+.information-name text{
+position: absolute;
+  color: white;
+  font-size: 28rpx;
+  font-weight: 600;
+
+}
+.information-body{
+  border-radius: 10rpx;
+  width: 330rpx;
+  height: 180rpx;
+  margin-bottom: 10rpx;
+  box-shadow: 1px 1px 1px 3px rgb(201, 214, 212), 0 0 8px 0 rgba(194, 207, 196, 0.705);
+}
+
+.box{
+  margin-top: 15rpx;
+}
+.box-body{
+  width: 96%;
+  height: 170rpx;
+   display: flex;
+  flex-direction: row;
+  margin-bottom: 10rpx;
+  border-radius: 20rpx;
+}
+.box-body-image{
+width: 20%;
+height: 170rpx;
+}
+.box-body-image image{
+  border-radius: 50%;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.box-body-name{
+  width: 57%;
+  height: 170rpx;
+  margin-left: -30rpx;
+  color: #000000;
+}
+.box-body-name-1{
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.box-body-name-2{
+color: #666666;
+}
+.box-body-name-3 text{
+  color: red;
+  font-size: 30rpx;
+  font-weight: 600;
+
+}
+
+.box-body-anniu{
+  width: 23%;
+  height: 170rpx;
+}
+.box-body-anniu button{
+width: 170rpx;
+height: 70rpx;
+font-size: 26rpx;
+}
+
+.import{
+   color: red;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.gdtadimg{
+  display: flex;
+  border-radius: 20rpx;
+}
+
+
+.xmad{
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}

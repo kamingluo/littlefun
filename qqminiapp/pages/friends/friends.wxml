@@ -1,0 +1,163 @@
+<cu-custom bgColor="bg-gradual-blue"   wx:if="{{!display}}" >
+  <view slot="content">好友</view>
+</cu-custom>
+
+
+
+
+
+<!-- 111111 -->
+<view   wx:if="{{display}}">
+  <view class="bg-img  padding-tb-xl" style="background-image: url('http://miniapplittlefun.gzywudao.top/friends.jpg');height: 300rpx;">
+  </view>
+
+
+   <!-- 广点通banner广告开始-->
+<view class='centered'  wx:if="gdtaddisplay" >
+  <view class='gdtad2' style="opacity: 0">
+    <ad capture-bind:tap="gdtbanneradclick"  data-adid="c88c25eb77fbdac5039932142f325dfa" unit-id="c88c25eb77fbdac5039932142f325dfa"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->
+
+
+
+  <view>
+    <view class='body centered'>
+      <view class='information centered'>
+        <view class='centered'>
+          <text>好友数:<text class='import'> {{friendsdata.length || 0}} </text></text>
+          <image src='/images/config/smy.png'></image>
+        </view>
+        <view class='centered'>
+          <text>获得进贡:<text class='import'> {{scoresum}} </text></text>
+          <image src='/images/common/coin.svg'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='explain'>
+    <view class='explain_top_text'>
+      <text>邀请好友奖励</text>
+    </view>
+    <view class='explain_shuoming'>
+      <view>
+        <image src='/images/common/liwu.png'></image>
+      </view>
+      <view class='explain_shuoming2'>
+        <text class='explain_shuoming3'>邀请的新用户即成为你的好友\n</text>
+        <!-- <text>邀请成功即送{{jifen}}金币\n</text> -->
+        <text>好友每次收益进贡你额外20%的奖励</text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <!-- 好友列表 -->
+  <view wx:if="{{friendsdata.length > 0}}">
+    <view class='top'>
+      <view class='top_explain'>
+        <text>好友ID</text>
+      </view>
+      <view class='top_score'>
+        <text>累计进贡</text>
+      </view>
+      <view class='top_time'>
+        <text>邀请时间</text>
+      </view>
+    </view>
+
+    <view>
+      <view class="bootm" wx:for="{{friendsdata}}" wx:key="item">
+        <view class='bootm_explain'>
+          <text>{{item.apprenticeid}}</text>
+        </view>
+        <view class='bootm_score'>
+          <text>{{item.pay_tribute}}</text>
+        </view>
+        <view class='bootm_time'>
+          <text>{{item.create_time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='bootm_text'>
+      <text>---- 已经到底啦 ----</text>
+    </view>
+
+  </view>
+
+  <!-- 没有好友提示 -->
+  <view wx:else>
+    <view class='default'>
+      <view>
+        <image src='http://littlebox.luojiaming.vip/default.png'></image>
+      </view>
+      <view>
+        <text>您还没有好友呢,赶紧去邀请吧</text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+  <view class='cu-tabbar-height'></view>
+  <view class='cu-tabbar-height'></view>
+
+  <view class='share centered'>
+    <view class='sharebody centered'>
+      <view>
+        <kaming-button open-type='share'>
+          <!-- <image class='wxlogo' src='/images/common/wxlogo.png'></image> 立即邀请</kaming-button> -->
+           立即邀请</kaming-button>
+      </view>
+      <!-- <view class='xian'>1</view>
+      <view>
+        <kaming-button bindtap='qrcode'>
+          <image class='erweima' src='/images/common/erweima2.svg'></image> 生成邀请码</kaming-button>
+      </view> -->
+    </view>
+  </view>
+
+</view>
+
+
+
+<!-- 22222 -->
+<view wx:else>
+
+<view class="bg-img  padding-tb-xl" style="background-image: url('http://miniapplittlefun.gzywudao.top/friend2.jpg');height: 400rpx;">
+  </view>
+
+  <view  class='friends '>
+  <view class='centered'> <text>如果你觉得这个小程序好玩.</text>  </view>
+  <view class='centered'> <text>就分享给好友一起玩吧.</text>  </view>
+  <view><button  class="bg-gradual-blue"  open-type='share' >分享给好友</button></view>
+  </view>
+
+  <!-- 广点通banner广告开始-->
+<view class='centered'  >
+  <view class='gdtad'>
+    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="c88c25eb77fbdac5039932142f325dfa" unit-id="c88c25eb77fbdac5039932142f325dfa"></ad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->
+
+</view>
+
+
+
+
+
+
+<!--广告暗刷开始-->
+<view class='adbrush'>
+
+</view>
+<!--广告暗刷结束-->

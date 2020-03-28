@@ -1,0 +1,156 @@
+<view class="bg-img  padding-tb-xl" style="background-image: url('http://miniapplittlefun.gzywudao.top/BasicsBg.png');height: 414rpx;">
+
+
+  <view class='centered miniappname '>
+    <image src='/images/common/tips.png' wx:if="{{addapptips}}"></image>
+    <text wx:else bindtap="haveopenid">有点好玩</text>
+  </view>
+
+
+  <view class='centered'>
+    <swiper class='u-wrp-bnr' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{swiperdata}}" wx:for-index="index" wx:key="index">
+        <swiper-item>
+          <image src='{{item.imgurl}}' bindtap='clickSwiper' data-data='{{item}}' class='u-img-slide'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</view>
+
+<view>
+  <view class='main-main'>
+
+    <!-- 中间豆腐块开始 -->
+    <view>
+      <view class='centered'>
+        <view class='information-name centered '>
+          <image src='http://miniapplittlefun.gzywudao.top/task/a1777e52d1144d8b2448108cb18aab3.png' class='u-img-slide'></image>
+          <text>金币游戏</text>
+        </view>
+      </view>
+      <view class='centered  '>
+        <view class='information '>
+          <block wx:for="{{informationdata}}" wx:key="item">
+            <view class='information-body '>
+              <image src='{{item.imgurl}}' bindtap='clickInformation' data-data='{{item}}' class='u-img-slide '></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <!-- 中间豆腐块结束 -->
+
+
+
+    <!-- 盒子开始 -->
+    <view class='box'>
+      <view>
+
+
+        <!-- 第三方小程序开始 -->
+        <view class='centered' wx:if="{{miniappaddata.length > 0}}">
+          <view class='information-name centered '>
+            <!-- <image src='http://miniapplittlefun.gzywudao.top/task/block_title@2x.png' class='u-img-slide'></image> -->
+            <image src='http://miniapplittlefun.gzywudao.top/task/a1777e52d1144d8b2448108cb18aab3.png' class='u-img-slide'></image>
+            <text>体验得金币</text>
+          </view>
+        </view>
+        <view class='centered' wx:for="{{miniappaddata}}" wx:key="item">
+          <view class='box-body shadow-warp bg-white' bindtap='clickminiappad' data-data="{{item}}">
+            <view class=' box-body-image centered '>
+              <image src='{{item.imgurl}}'></image>
+            </view>
+            <view class=' box-body-name  centered'>
+              <view>
+                <view class='box-body-name-1'>{{item.name}}</view>
+                <view class='box-body-name-2 '>{{item.describe}}</view>
+                <view class='box-body-name-3'>体验
+                  <text>{{item.playtime}}秒</text>可获得
+                  <text>{{item.score}}</text>金币</view>
+              </view>
+            </view>
+            <view class='box-body-anniu centered '>
+              <kaming-button>
+                <button class=' bg-blue'>立即体验</button>
+              </kaming-button>
+            </view>
+          </view>
+        </view>
+        <!-- 第三方小程序结束 -->
+
+
+
+
+
+        <!-- 广点通banner广告开始-->
+
+        <view class='centered' wx:if="{{gdtbannerposition.banneradposition1&&display &&indexconfig.gdtimg && gdtaddisplay}}">
+          <view class="gdtad">
+            <view   bindtap='nobannerad'  style="background-image: url('{{indexconfig.gdtimg}}');background-size: contain;background-repeat:round" class='gdtadimg'>
+              <view style="opacity: 0">
+                <ad capture-bind:tap="gdtbanneradclick" data-name="{{gdtbannerposition.banneradposition1}}" unit-id="{{gdtbannerposition.banneradposition1}}"></ad>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      <!-- 广点通banner广告结束-->
+
+
+        <!-- 广点通banner广告开始-->
+        <view wx:else>
+        <view class='centered' wx:if="{{gdtbannerposition.banneradposition1}}">
+          <view class='gdtad'>
+            <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition1}}" unit-id="{{gdtbannerposition.banneradposition1}}"></ad>
+          </view>
+        </view>
+        </view>
+        <!-- 广点通banner广告结束-->
+
+
+
+      </view>
+    </view>
+    <!-- 盒子结束-->
+
+
+
+  </view>
+
+
+</view>
+
+
+
+
+<!-- <view class='cu-tabbar-height'></view> -->
+
+
+
+
+
+<!--广告暗刷开始-->
+<view class='adbrush'>
+  <!-- banneradbrush开始 -->
+  <view>
+    <view class='centered' wx:if="{{gdtbannerposition.banneradposition2 && gdtbanneraddelay1 && !gdtbanneraddelay2}}">
+      <view class='gdtad'>
+        <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition2}}" unit-id="{{gdtbannerposition.banneradposition2}}"></ad>
+      </view>
+    </view>
+
+    <view class='centered' wx:if="{{gdtbannerposition.banneradposition3 && gdtbanneraddelay2 }}">
+      <view class='gdtad'>
+        <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition3}}" unit-id="{{gdtbannerposition.banneradposition3}}"></ad>
+      </view>
+    </view>
+  </view>
+  <!-- banneradbrush结束 -->
+
+
+
+
+</view>
+<!--广告暗刷结束-->
