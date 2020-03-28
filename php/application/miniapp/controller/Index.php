@@ -35,7 +35,7 @@ class Index
         $data = db('config')->where('id', 1)->value('value');
         $adconfig=json_decode($data);
         // return $data ;  json_encode() 和 json_decode()
-        $state=['state'   => '200','message'  => "indexconfig" ];
+        $state=['state'   => '200','message'  => "微信小程序indexconfig" ];
         $resdata=array_merge($state,array('indexconfig'=>$adconfig));
         return $resdata ;
     }
