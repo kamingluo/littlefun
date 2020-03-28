@@ -1,5 +1,5 @@
 <?php
-namespace app\miniapp\controller\task;
+namespace app\qqminiapp\controller\task;
 use think\Db;
 use think\Request;
 use think\Config;

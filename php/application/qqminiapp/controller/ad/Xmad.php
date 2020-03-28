@@ -1,5 +1,5 @@
 <?php
-namespace app\miniapp\controller\Ad;
+namespace app\qqminiapp\controller\Ad;
 use think\Db;
 use think\Request;
 use think\Config;

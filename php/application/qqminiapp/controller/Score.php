@@ -5,7 +5,7 @@
 // +----------------------------------------------------------------------
  
 
-namespace app\miniapp\controller;
+namespace app\qqminiapp\controller;
 
 use think\Db;
 use think\Request;

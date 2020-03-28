@@ -1,5 +1,5 @@
 <?php
-namespace app\miniapp\controller\game;
+namespace app\qqminiapp\controller\game;
 use think\Db;
 use think\Request;
 use think\Config;
