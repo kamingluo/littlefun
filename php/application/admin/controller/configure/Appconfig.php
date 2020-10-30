@@ -24,15 +24,10 @@ class Appconfig
     }
 
 
-
-
-
-
     public function test(){
         $data=db('config2')->select();
         return $data;
     }
-
 
 
     public function addorupdate(Request $request) //增加或者更新config,一般不会去删除也不会更改id
