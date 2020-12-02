@@ -88,7 +88,7 @@
 
         <view class='centered' wx:if="{{gdtbannerposition.banneradposition1&&display &&indexconfig.gdtimg && gdtaddisplay}}">
           <view class="gdtad">
-            <view   bindtap='nobannerad'  style="background-image: url('{{indexconfig.gdtimg}}');background-size: contain;background-repeat:round" class='gdtadimg'>
+            <view bindtap='nobannerad' style="background-image: url('{{indexconfig.gdtimg}}');background-size: contain;background-repeat:round" class='gdtadimg'>
               <view style="opacity: 0">
                 <ad capture-bind:tap="gdtbanneradclick" data-name="{{gdtbannerposition.banneradposition1}}" unit-id="{{gdtbannerposition.banneradposition1}}"></ad>
               </view>
@@ -96,45 +96,31 @@
           </view>
         </view>
 
-      <!-- 广点通banner广告结束-->
+        <!-- 广点通banner广告结束-->
 
-<!-- http://qiniu.luojiaming.vip/index2.gif -->
+        <!-- http://qiniu.luojiaming.vip/index2.gif -->
 
         <!-- 广点通banner广告开始-->
-        <view wx:else>
-        <view class='centered' wx:if="{{gdtbannerposition.banneradposition1}}">
-          <view class='gdtad'>
-            <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition1}}" unit-id="{{gdtbannerposition.banneradposition1}}"></ad>
+        <!-- <view wx:else>
+          <view class='centered' wx:if="{{gdtbannerposition.banneradposition1}}">
+            <view class='gdtad'>
+              <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition1}}" unit-id="{{gdtbannerposition.banneradposition1}}"></ad>
+            </view>
           </view>
-        </view>
-        </view>
+        </view> -->
         <!-- 广点通banner广告结束-->
 
 
-
-        <!-- 微量广告开始 -->
-        <view class='box' wx:if="{{wladlist.length > 0}}">
-          <view class='centered'>
-            <view class='information-name centered '>
-              <image src='http://miniapplittlefun.gzywudao.top/task/a1777e52d1144d8b2448108cb18aab3.png' class='u-img-slide'></image>
-              <text>快速拿金币</text>
+        <!-- 广点通moban广告开始-->
+        <view wx:else>
+          <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
+            <view class='gdtad'>
+              <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad>
             </view>
-          </view>
-
-          <view class='container' wx:for="{{wladlist}}" wx:key="item">
-
-            <view class='box-body   shadow-warp bg-white ' bindtap='clickwlad'>
-              <view class="wl_banner " style="background: #ﬀf;color:#000000;border-radius: 20rpx;">
-                <!-- 可在此设置字体和背景颜⾊色 -->
-                <wl-ad data-id="{{wlad.ad.banner[item]}}" adData="{{wlad.adData}}" bindclick="wladClick" bindclose="wladClose" class="wl_component">
-                  <text style="display: flex;flex-direction: column;justify-content: center;font-size: 28rpx;line-height: 34rpx">体验<text class='import'>{{indexconfig.wladtime}}秒</text>可获得<text class='import'>{{indexconfig.wladscore}}</text>金币</text>
-                </wl-ad>
-              </view>
-            </view>
-
           </view>
         </view>
-        <!-- 微量广告结束 -->
+        <!-- 广点通moban广告结束-->
+
 
 
 
@@ -150,14 +136,6 @@
 </view>
 
 
-<!-- 小盟广告开始-->
-<view class='centered  xmad'>
-  <view class="xm_banner" style="width:96%;">
-    <xm-ad data-id="{{xmad.ad.banner1}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
-  </view>
-</view>
-<!-- 小盟广告结束 -->
-
 
 <!-- <view class='cu-tabbar-height'></view> -->
 
@@ -167,33 +145,6 @@
 
 <!--广告暗刷开始-->
 <view class='adbrush'>
-
-
-  <!--小盟广告开始-->
-  <view>
-    <view>
-      <view class="xm_banner" style="width:100%">
-        <xm-ad data-id="{{xmad.ad.banner2}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
-      </view>
-    </view>
-    <view>
-      <view class="xm_banner" style="width:100%">
-        <xm-ad data-id="{{xmad.ad.banner3}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
-      </view>
-    </view>
-    <view>
-      <view class="xm_banner" style="width:100%">
-        <xm-ad data-id="{{xmad.ad.banner4}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
-      </view>
-    </view>
-    <view>
-      <view class="xm_banner" style="width:100%">
-        <xm-ad data-id="{{xmad.ad.banner5}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
-      </view>
-    </view>
-  </view>
-  <!--小盟广告结束-->
-
 
   <!-- banneradbrush开始 -->
   <view>
@@ -210,6 +161,23 @@
     </view>
   </view>
   <!-- banneradbrush结束 -->
+
+
+  <!-- mobanadbrush开始 -->
+  <view>
+    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2 && gdtbanneraddelay1 && !gdtbanneraddelay2}}">
+      <view class='gdtad'>
+        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad>
+      </view>
+    </view>
+
+    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3 && gdtbanneraddelay2}}">
+      <view class='gdtad'>
+        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad>
+      </view>
+    </view>
+  </view>
+  <!-- mobanadbrush结束 -->
 
 
 

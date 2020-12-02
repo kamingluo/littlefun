@@ -14,19 +14,13 @@ Page({
     userdata:'',
     display: false, //是否展示
     gdtaddisplay: false, //视频是否展示展示
-    xmad: {//小盟广告
-      adData: {},
-      ad: {
-        banner3: "xm285e32d8abf77e8ba321f97005d8f2",
-        banner4: "xm4b6fd7c45bfc80a4e057693272702b",
-        banner5: "xm478c5c0e15def0abcb93ccd2d57194",
-      },
-    },
+    gdtmobanposition:{}//模板广告
 
   },
 
   onLoad: function (options) {
     this.addisplay()
+    this.gdtmobanposition()
   },
 
   onShow: function () {
@@ -136,6 +130,45 @@ Page({
     let data = Object.assign(userdata, e.currentTarget.dataset); //将addata合并
     app.aldstat.sendEvent('我的页gdt视频ad', data);
   },
+
+  gdtmobanadclick: function (e) {
+    let userdata = wx.getStorageSync('userdata')
+    let data = Object.assign(userdata, e.currentTarget.dataset); //将addata合并
+    app.aldstat.sendEvent('我的页模板ad', data);
+  },
+
+
+  gdtmobanposition: function () {
+    var that = this
+    let number = Math.floor(Math.random() * 3)
+    if (number == 1) {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-ac1e750ff9040266',
+        mobanadposition2: 'adunit-cdf3dc40b4cbaaeb',
+        mobanadposition3: 'adunit-f99bb8a5241c5dff',
+      }
+
+    } else if (number == 2) {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-cdf3dc40b4cbaaeb',
+        mobanadposition2: 'adunit-f99bb8a5241c5dff',
+        mobanadposition3: 'adunit-ac1e750ff9040266',
+      }
+    } else {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-f99bb8a5241c5dff',
+        mobanadposition2: 'adunit-ac1e750ff9040266',
+        mobanadposition3: 'adunit-cdf3dc40b4cbaaeb',
+      }
+    }
+
+    this.setData({
+      gdtmobanposition: gdtmobanposition
+    })
+
+
+  },
+
 
 
 

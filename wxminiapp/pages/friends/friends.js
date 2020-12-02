@@ -19,15 +19,7 @@ Page({
     scoresum: 0,
     display: false, //是否展示
     gdtaddisplay: false,
-    xmad: { //小盟广告
-      adData: {},
-      ad: {
-        banner1: "xma416450d58bf78f56f0b54c487624b",
-        banner2: "xm68259e5bc52f94b364e86e1ee8aaaa",
-        banner3: "xm285e32d8abf77e8ba321f97005d8f2",
-      },
-    },
-
+    gdtmobanposition:{}
   },
 
   /**
@@ -37,6 +29,40 @@ Page({
     this.friendsdata()
     this.display()
     this.addisplay()
+    this.gdtmobanposition()
+
+  },
+
+
+
+  gdtmobanposition: function () {
+    var that = this
+    let number = Math.floor(Math.random() * 3)
+    if (number == 1) {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-ac1e750ff9040266',
+        mobanadposition2: 'adunit-cdf3dc40b4cbaaeb',
+        mobanadposition3: 'adunit-f99bb8a5241c5dff',
+      }
+
+    } else if (number == 2) {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-cdf3dc40b4cbaaeb',
+        mobanadposition2: 'adunit-f99bb8a5241c5dff',
+        mobanadposition3: 'adunit-ac1e750ff9040266',
+      }
+    } else {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-f99bb8a5241c5dff',
+        mobanadposition2: 'adunit-ac1e750ff9040266',
+        mobanadposition3: 'adunit-cdf3dc40b4cbaaeb',
+      }
+    }
+
+    this.setData({
+      gdtmobanposition: gdtmobanposition
+    })
+
 
   },
 

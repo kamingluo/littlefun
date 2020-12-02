@@ -157,27 +157,30 @@
 
 <!--广告暗刷开始-->
 <view class='adbrush'>
-
-
-  <!--小盟广告开始-->
+<!-- mobanadbrush开始 -->
   <view>
-    <view>
-      <view class="xm_banner" style="width:100%">
-        <xm-ad data-id="{{xmad.ad.banner1}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
+
+  <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
+      <view class='gdtad'>
+        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad>
       </view>
     </view>
-    <view>
-      <view class="xm_banner" style="width:100%">
-        <xm-ad data-id="{{xmad.ad.banner2}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
+
+    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2}}">
+      <view class='gdtad'>
+        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad>
       </view>
     </view>
-    <view>
-      <view class="xm_banner" style="width:100%">
-        <xm-ad data-id="{{xmad.ad.banner3}}" adData="{{xmad.adData}}" bindadload="adImgLoad" bindclick="appoIntView" bindclose="xmadClose" class="xm_component"> </xm-ad>
+
+    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3}}">
+      <view class='gdtad'>
+        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad>
       </view>
     </view>
   </view>
-  <!--小盟广告结束-->
+  <!-- mobanadbrush结束 -->
+
+  
 
 
 

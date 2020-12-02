@@ -28,23 +28,7 @@ Page({
     taskscore: null, //任务奖励
     adname: "", //AD名称
     gdtbannerposition: '', //广点通位置
-    wlad: {
-      adData: {},
-      ad: {
-        banner: ["banner0", "banner1", "banner2", "banner3"], //是否展示banner⼴广告，如不不需展示删掉该字段即可
-      }
-    },
-    wladlist: null,
-    xmad: { //小盟广告
-      adData: {},
-      ad: {
-        banner1: "xma416450d58bf78f56f0b54c487624b",
-        banner2: "xm68259e5bc52f94b364e86e1ee8aaaa",
-        banner3: "xm285e32d8abf77e8ba321f97005d8f2",
-        banner4: "xm4b6fd7c45bfc80a4e057693272702b",
-        banner5: "xm478c5c0e15def0abcb93ccd2d57194",
-      },
-    },
+    
 
   },
   onLoad: function(e) {
@@ -52,6 +36,7 @@ Page({
     this.indexconfig()
     this.miniappadData()
     this.gdtbannerposition()
+    this.gdtmobanposition()
     this.addisplay()
     this.setData({
       addapptips: app.globalData.addapptips || false, //添加小程序提示
@@ -335,6 +320,37 @@ Page({
       })
       that.gdtbanneraddelay()
     }, 3500);
+
+  },
+
+  gdtmobanposition: function () {
+    var that = this
+    let number = Math.floor(Math.random() * 3)
+    if (number == 1) {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-ac1e750ff9040266',
+        mobanadposition2: 'adunit-cdf3dc40b4cbaaeb',
+        mobanadposition3: 'adunit-f99bb8a5241c5dff',
+      }
+
+    } else if (number == 2) {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-cdf3dc40b4cbaaeb',
+        mobanadposition2: 'adunit-f99bb8a5241c5dff',
+        mobanadposition3: 'adunit-ac1e750ff9040266',
+      }
+    } else {
+      var gdtmobanposition = {
+        mobanadposition1: 'adunit-f99bb8a5241c5dff',
+        mobanadposition2: 'adunit-ac1e750ff9040266',
+        mobanadposition3: 'adunit-cdf3dc40b4cbaaeb',
+      }
+    }
+
+    this.setData({
+      gdtmobanposition: gdtmobanposition
+    })
+
 
   },
 

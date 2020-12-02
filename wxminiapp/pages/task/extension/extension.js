@@ -16,16 +16,6 @@ Page({
     state:false,
     extensiondata:null,
     tiaozhuan:false,
-    xmad: {//小盟广告
-      adData: {},
-      ad: {
-        banner1: "xma416450d58bf78f56f0b54c487624b",
-        banner2: "xm68259e5bc52f94b364e86e1ee8aaaa",
-        banner3: "xm285e32d8abf77e8ba321f97005d8f2",
-        banner4: "xm4b6fd7c45bfc80a4e057693272702b",
-        banner5: "xm478c5c0e15def0abcb93ccd2d57194",
-      },
-    },
 
   },
 
