@@ -13,7 +13,7 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.2",
+	"libVersion": "2.14.1",
 	"appid": "wxc335c3cf09a7a39c",
 	"projectname": "littlefun",
 	"debugOptions": {

@@ -112,10 +112,10 @@
 
 
         <!-- 广点通moban广告开始-->
-        <view wx:else>
+        <view >
           <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
             <view class='gdtad'>
-              <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad>
+              <ad-custom capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad-custom>
             </view>
           </view>
         </view>
@@ -137,7 +137,7 @@
 
 
 
-<!-- <view class='cu-tabbar-height'></view> -->
+<view class='cu-tabbar-height'></view>
 
 
 
@@ -167,13 +167,13 @@
   <view>
     <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2 && gdtbanneraddelay1 && !gdtbanneraddelay2}}">
       <view class='gdtad'>
-        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad>
+        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad-custom>
       </view>
     </view>
 
     <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3 && gdtbanneraddelay2}}">
       <view class='gdtad'>
-        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad>
+        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad-custom>
       </view>
     </view>
   </view>

@@ -120,10 +120,6 @@
     </view>
   </view>
 
-
-
-
-
   <view class='task centered'   wx:if="{{display&&gdtaddisplay}}"   >
     <view class='task_list bg-img  u-img-slid padding-tb-xl' style="background-image: url('http://miniapplittlefun.gzywudao.top/task/block_content_bg.png');">
       <view class='box-body'>
@@ -151,10 +147,6 @@
       </view>
     </view>
   </view>
-
-
-
-
   
   <view class='task centered'  wx:if="{{display && taskconfig.sharescore > 10}}" >
     <view class='task_list bg-img  u-img-slid padding-tb-xl' style="background-image: url('http://miniapplittlefun.gzywudao.top/task/block_content_bg.png');">
@@ -228,19 +220,19 @@
 
   <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
       <view class='gdtad'>
-        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad>
+        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad-custom>
       </view>
     </view>
 
     <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2}}">
       <view class='gdtad'>
-        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad>
+        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad-custom>
       </view>
     </view>
 
     <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3}}">
       <view class='gdtad'>
-        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad>
+        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad-custom>
       </view>
     </view>
   </view>

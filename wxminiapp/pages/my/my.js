@@ -11,10 +11,10 @@ var Page = require('../../utils/sdk/xmad/xmadx_sdk.min.js').xmad(Page).xmPage; /
 Page({
 
   data: {
-    userdata:'',
+    userdata: '',
     display: false, //是否展示
     gdtaddisplay: false, //视频是否展示展示
-    gdtmobanposition:{}//模板广告
+    gdtmobanposition: {}//模板广告
 
   },
 
@@ -52,8 +52,8 @@ Page({
 
   },
 
- //获取用户信息
-  userdata:function(){
+  //获取用户信息
+  userdata: function () {
     wx.login({
       success: res => {
         request({
@@ -62,7 +62,7 @@ Page({
             code: res.code,
           },
           success: res => {
-           // console.log('我的页面获取用户信息', res);
+            // console.log('我的页面获取用户信息', res);
             this.setData({
               userdata: res.userdata,
             })
@@ -78,32 +78,32 @@ Page({
   },
 
 
-  tenmiao:function(){
+  tenmiao: function () {
     wx.navigateTo({
       url: '/pages/game/tenseconds/tenseconds'
     })
   },
-  exchange:function(){
+  exchange: function () {
     wx.navigateTo({
       url: '/pages/exchange/exchange'
     })
 
   },
- 
-  qrcode:function(){
+
+  qrcode: function () {
     wx.navigateTo({
       url: '/pages/my/qrcode/qrcode'
     })
 
   },
 
-  userscorerecord:function(){
+  userscorerecord: function () {
     wx.navigateTo({
       url: '/pages/my/score_detailed/score_detailed'
     })
   },
 
-  userchangelist:function(){
+  userchangelist: function () {
     wx.navigateTo({
       url: '/pages/my/exchange_detailed/exchange_detailed'
     })
@@ -168,6 +168,15 @@ Page({
 
 
   },
+
+  mobanadsuccess: function (e) {
+    console.log("加载成功", e)
+  },
+
+  mobanaderr: function (e) {
+    console.log("加载失败", e)
+  },
+
 
 
 

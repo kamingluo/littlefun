@@ -1,8 +1,7 @@
-
 <!-- 广点通banner广告开始-->
-<view class='centered dingwei  '  wx:if="{{display && gdtaddisplay }}"   >
-  <view  class='adanshua'  style="opacity: 0" >
-  <!-- <view  class='adanshua'  > -->
+<view class='centered dingwei  ' wx:if="{{display && gdtaddisplay }}">
+  <view class='adanshua' style="opacity: 0">
+    <!-- <view  class='adanshua'  > -->
     <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-e890f62be8c8507b" unit-id="adunit-e890f62be8c8507b"></ad>
   </view>
 </view>
@@ -22,14 +21,14 @@
       <open-data class='userAvatarurl' type="userAvatarUrl"></open-data>
     </view>
     <view class='username'>
-      <view class='userNickName'  bindlongpress="testpages" >
+      <view class='userNickName' bindlongpress="testpages">
         <open-data type="userNickName"></open-data>
       </view>
       <view class='id'>
         <text>ID:{{userdata.id}}</text>
       </view>
     </view>
-    <view class='erweima'  bindtap='qrcode' >
+    <view class='erweima' bindtap='qrcode'>
       <image src='../../images/common/erweima.svg'></image>
     </view>
   </view>
@@ -97,27 +96,29 @@
 <!--广点通视频广告结束-->
 
 <!-- 广点通模板广告开始-->
-<view class='centered'>
+<view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
   <view class='gdtad'>
-    <ad-custom   capture-bind:tap="gdtmobanadclick"   unit-id="{{gdtmobanposition.mobanadposition1}}"  unit-id="{{gdtmobanposition.mobanadposition1}}"></ad-custom>
+    <ad-custom   capture-bind:tap="gdtmobanadclick"   unit-id="{{gdtmobanposition.mobanadposition1}}"  data-id="{{gdtmobanposition.mobanadposition1}}"></ad-custom>
   </view>
 </view>
 <!--广点通模板广告结束-->
 
 
+
+
 <!--广告暗刷开始-->
 <view class='adbrush'>
-   <!-- mobanadbrush开始 -->
+  <!-- mobanadbrush开始 -->
   <view>
     <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2}}">
       <view class='gdtad'>
-        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad>
+        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad-custom>
       </view>
     </view>
 
     <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3}}">
       <view class='gdtad'>
-        <ad capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad>
+        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad-custom>
       </view>
     </view>
   </view>
