@@ -1,0 +1,44 @@
+<wxs module="filters" src="index.wxs"></wxs>
+<view class="centered">
+  <view class="box">
+    <view class="good-body" bindtap='clickgoods' wx:for="{{goodslist}}"  data-data="{{item}}" wx:key="item">
+      <view class="good-img centered">
+        <image src='{{item.goods_image_url}}'></image>
+      </view>
+      <view class="good-desc centered">
+        <view class="good-desc-body">
+          <text>{{item.goods_name}}</text>
+        </view>
+      </view>
+      <view class="good-price centered">
+        <view class="good-juli-body">
+          
+          <text class="discount" wx:if="{{item.has_coupon}}">￥{{ filters.toFix(item.min_group_price/100 - item.coupon_discount/100)}}</text>
+          <text class="discount" wx:else>￥{{ filters.toFix(item.min_group_price/100)}}</text>
+
+          <text class="yuanjia" wx:if="{{item.has_coupon}}">￥{{filters.toFix(item.min_group_price/100)}}</text>
+        </view>
+      </view>
+      <view class="sold-body centered">
+        <view class="good-juli-body">
+          <view>
+            <text class="sold" decode="{{true}}">已售&nbsp;{{item.sales_tip}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="sold-body centered">
+        <view class="good-juli-body">
+          <text class="cu-tag bg-red radius youhui" wx:if="{{item.has_coupon}}">{{item.coupon_discount/100}}元券</text>
+          <text class="cu-tag bg-red radius youhui" wx:else>暂无优惠券</text>
+        </view>
+      </view>
+      <view class="sold-body centered">
+        <view class="good-juli-body">
+          <view>
+            <text class="sold mall" decode="{{true}}">{{item.mall_name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

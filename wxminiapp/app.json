@@ -56,6 +56,12 @@
         "selectedIconPath": "images/config/sfriends.png"
       },
       {
+        "pagePath": "pages/extension/extension",
+        "text": "找优惠",
+        "iconPath": "images/config/friends.png",
+        "selectedIconPath": "images/config/sfriends.png"
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "images/config/my.png",

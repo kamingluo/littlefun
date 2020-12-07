@@ -1,0 +1,111 @@
+/* pages/exchange/exchange.wxss */
+@import "../../colorui/main.wxss";
+
+.box {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 96%;
+  margin-top: 10rpx;
+}
+
+.centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.good-body{
+  border-radius: 3%;
+  background-color: white;
+  width: 49%;
+  height: 560rpx;
+  margin-top: 10rpx;
+}
+.good-img{
+  
+  width: 100%;
+}
+.good-img image{
+  border-radius: 3%;
+  width: 360rpx;
+  height: 300rpx;
+}
+
+.good-desc{
+  width:100%;
+  margin-top: 10rpx;
+}
+.good-desc-body{
+  height: 70rpx;
+  width: 95%;
+}
+.good-juli-body{
+   width: 95%;
+}
+.good-desc  text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #000000;
+  font-size: 26rpx;
+}
+
+.good-price{
+  margin-top: 10rpx;
+}
+
+.discount{
+  color: red;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+
+.yuanjia{
+  margin-left: 10rpx;
+  text-decoration:line-through;
+  font-size: 25rpx;
+  color: #666666;
+}
+
+.sold-body{
+  margin-top: 5rpx;
+}
+.sold{
+  font-size: 25rpx;
+  color: #666666;
+}
+.youhui{
+  margin-top: 5rpx;
+}
+
+.bg-red {
+	background-color: red;
+	color: var(--white);
+}
+
+.mall{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: #000000;
+  font-size: 24rpx;
+}
+
+.cu-tag {
+	font-size: 24rpx;
+	vertical-align: middle;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0rpx 16rpx;
+	height: 35rpx;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	white-space: nowrap;
+}

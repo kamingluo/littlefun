@@ -1,0 +1,19 @@
+.default{
+  display: flex;
+   flex-direction: column;
+   justify-content:center; 
+   text-align: center;
+   width: 100%;
+}
+.default image {
+  height: 350rpx;
+  width: 450rpx;
+  margin-bottom: 20rpx;
+}
+.default text{
+  /* color: #e21717; */
+  color: #aaaaaa;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-right: 30rpx;
+}
