@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{name}}</view>
+</cu-custom>
+
+<taobaogoodslist goodslist="{{goodslist}}"></taobaogoodslist>
+
+<view class="centered tips">
+  <text>加载中.......</text>
+</view>
+
+<view class='goTop centered' hidden='{{!floorstatus}}'>
+	<image src='../../../../images/up.png' bindtap="goTop"></image>
+</view>

@@ -8,7 +8,6 @@ const {
   share
 } = require('./../../utils/share.js');
 const scoreOperation = require('./../../utils/score.js');
-var Page = require('../../utils/sdk/xmad/xmadx_sdk.min.js').xmad(Page).xmPage; //小盟广告
 Page({
 
   /**

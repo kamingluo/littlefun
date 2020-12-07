@@ -1,0 +1,10 @@
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">{{name}}</view>
+</cu-custom>
+
+<pddgoodslist goodslist="{{goodslist}}"></pddgoodslist>
+
+<view class="centered tips">
+  <text>-------已经到底啦-------</text>
+</view>

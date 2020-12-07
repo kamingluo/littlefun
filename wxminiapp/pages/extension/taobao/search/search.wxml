@@ -1,0 +1,58 @@
+<wxs module="filters" src="search.wxs"></wxs>
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">商品搜索</view>
+</cu-custom>
+
+<view class="cu-bar search bg-white">
+	<view class="search-form round">
+		<text class="cuIcon-search"></text>
+		<input type="text" placeholder="请输入商品名称" value="{{searchtext}}" bindinput="searchtext" confirm-type="search" focus="true"></input>
+		<text class="cuIcon-roundclose" bindtap="qingkong"></text>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-red sm shadow-blur round" bindtap="clicksearch">搜索</button>
+	</view>
+</view>
+
+
+<view wx:if="{{nodata && goodslist.length < 1}}" class="defaultgraph">
+	<defaultgraph tips="没搜到,换个词试试？"></defaultgraph>
+</view>
+
+<view wx:else >
+	<view class="goodslist" wx:if="{{goodslist.length > 0}}">
+		<taobaogoodslist goodslist="{{goodslist}}"></taobaogoodslist>
+	</view>
+</view>
+
+
+<view class='goTop centered' hidden='{{!floorstatus}}'>
+	<image src='../../../../images/up.png' bindtap="goTop"></image>
+</view>
+
+
+<view wx:if="{{goodslist.length < 1}}">
+	<view class="cu-bar bg-white solid-bottom">
+		<view class="action">
+			<text class="cuIcon-title text-blue"></text>历史搜索
+		</view>
+		<view class="action" hover-class="none" wx:if="{{list.length!=0}}" catchtap='remove'>
+			<text class="cuIcon-deletefill"></text>
+			<!-- <text class="text-df">删除</text> -->
+		</view>
+	</view>
+
+	<view class='container'>
+		<view class='list'>
+			<view class="key" wx:if="{{list.length==0}}">暂无搜索记录</view>
+			<view class="key" wx:for="{{list}}" wx:key="" bindtap='searchName' data-value='{{item}}'>{{filters.beautySub(item)}}</view>
+		</view>
+		<view class='search_result' wx:if="{{inputValue}}">
+			<view wx:for="{{resultList}}" wx:key="" bindtap='detail' data-id='{{item.projectCode}}'>
+				{{item.projectName}}
+			</view>
+			<view class='no_more' wx:if="{{resultList.length==0}}">暂无相关内容</view>
+		</view>
+	</view>
+</view>

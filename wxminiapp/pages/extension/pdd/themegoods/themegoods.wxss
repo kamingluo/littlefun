@@ -1,0 +1,4 @@
+.tips{
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}

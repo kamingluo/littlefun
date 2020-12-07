@@ -6,7 +6,6 @@ const {
   share
 } = require('./../../utils/share.js');
 const scoreOperation = require('./../../utils/score.js');
-var Page = require('../../utils/sdk/xmad/xmadx_sdk.min.js').xmad(Page).xmPage; //小盟广告
 let preventShake = 0; //防止快速点击
 let interstitialAd = null //插屏广告
 

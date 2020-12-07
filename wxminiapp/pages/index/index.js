@@ -9,15 +9,16 @@ const {
 } = require('./../../utils/share.js');
 const common = require('./../../utils/common.js') //公共函数
 const task = require('./../../utils/task.js');
-var Page = require('../../utils/sdk/xmad/xmadx_sdk.min.js').xmad(Page).xmPage; //小盟广告
+
+const addata = require('./../../utils/addata.js')
 
 Page({
   data: {
     display: false,
-    "swiperdata": [],
-    "informationdata": [],
-    "miniappaddata": [],
-    "indexconfig": "",
+    swiperdata: [],
+    informationdata: [],
+    miniappaddata: [],
+    indexconfig: "",
     addapptips: false,
     gdtaddisplay: false,
     adid: '',
@@ -46,6 +47,8 @@ Page({
   },
   onShow: function() {
     this.playtask()
+    let moban = addata.havemobansome()
+    console.log("feed广告数据",moban)
   },
 
 
@@ -91,31 +94,13 @@ Page({
         this.setData({
           indexconfig: res.indexconfig,
         })
-        this.wladlist(res.indexconfig.wladnum)
+        
       }
     })
   },
 
 
-  //微量广告展示
-  wladlist: function(number) {
-
-    if (!app.globalData.display) {
-      return;
-    }
-
-    var that = this
-    var wladnumber = number
-    // console.log("微量ad配置数量", wladnumber)
-    var newwladlist = []
-    for (var wl = 0; wl < wladnumber; wl++) {
-      newwladlist.push([wl]);
-    }
-    that.setData({
-      wladlist: newwladlist,
-    });
-    //console.log("微量newwladlist", newwladlist)
-  },
+  
 
   //点击轮播图
   clickSwiper: function(e) {
@@ -189,24 +174,7 @@ Page({
     }
   },
 
-  clickwlad: function(e) {
-    let userdata = wx.getStorageSync('userdata')
-    app.aldstat.sendEvent('首页点击微量广告', userdata);
-    console.log("点击微量广告", e.target.dataset.id)
-    var that = this
-    that.startSetInter()
-    var adname = "微量" + e.target.dataset.id
-    var tasktime = that.data.indexconfig.wladtime || 15
-    var taskscore = that.data.indexconfig.wladscore || 60
-    that.setData({
-      taskid: 1,
-      taskscore: taskscore,
-      tasktime: tasktime,
-      adid: 999,
-      adname: adname,
-    })
 
-  },
 
   startSetInter: function() {
     var that = this;

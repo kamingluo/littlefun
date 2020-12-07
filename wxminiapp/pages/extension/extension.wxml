@@ -1,0 +1,56 @@
+
+
+<cu-custom bindtap="gosearch" bgColor="bg-white" wx:if="{{iosdisplay}}">
+  <view slot="right">
+    <view class="cu-bar search">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="请输入商品名称" value="请输入搜索词搜索商品" confirm-type="search" disabled="true"></input>
+      </view>
+    </view>
+  </view>
+</cu-custom>
+
+
+
+  <cu-custom bgColor="bg-red" wx:else>
+    <view slot="content">
+      <text style="color:white;">找优惠</text>
+    </view>
+  </cu-custom>
+
+
+
+
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{themelist}}" wx:key bindtap="clickswiper" data-data="{{item}}">
+    <image src="{{item.image_url}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+
+
+<view class="cu-list grid col-5 no-border">
+  <view class="cu-item" wx:for="{{iconList}}" wx:key bindtap="clickicon" data-data="{{item}}">
+    <view class="icon-image">
+      <image src="{{item.iconurl}}"></image>
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+<view class="tab-body">
+  <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{tabdata}}" wx:key bindtap="tabSelect" data-data="{{item}}" data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+</view>
+
+<view class="goodslist"> 
+  <pddgoodslist goodslist="{{goodslist}}"></pddgoodslist>
+</view>
+
+
+<view class='goTop centered' hidden='{{!floorstatus}}'>
+	<image src='../../images/up.png' bindtap="goTop"></image>
+</view>

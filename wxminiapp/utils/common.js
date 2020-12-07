@@ -19,7 +19,7 @@ function register(e) {
           scene: scene
         },
         success: res => {
-         // console.log('注册成功', res);
+          // console.log('注册成功', res);
           wx.setStorageSync('userdata', res.userdata)
         },
         fail: res => {
@@ -33,7 +33,7 @@ function register(e) {
   })
 }
 
-function xmaddata(){
+function xmaddata() {
   request({
     service: 'ad/xmad/xmadconfig',
     method: 'GET',
@@ -61,7 +61,7 @@ function shareconfig() {
 
 
 //跳转内部页面
-function insidejump (e) {
+function insidejump(e) {
   //console.log("跳转tab页面")
   let type = e.type
   if (type == 0) {
@@ -84,12 +84,34 @@ function insidejump (e) {
 }
 
 
+//广告统计
+function clickgdtadstatistics(e) {
+  const nowTime = Date.now();
+  if (nowTime - preventShake < 2000) {
+    return
+  }
+  preventShake = nowTime;
+
+  let data = e;
+  let user_id = wx.getStorageSync('userdata').id || 0;
+  data.user_id = user_id;
+  request({
+    service: 'ad/gdtad/clickad',
+    data: data,
+    success: res => {
+      console.log("点击广告统计返回", res)
+    }
+  })
+}
+
+
 
 
 
 module.exports = {
   register: register,
   insidejump: insidejump,
-  xmaddata:xmaddata,
+  xmaddata: xmaddata,
   shareconfig: shareconfig,
+  clickgdtadstatistics: clickgdtadstatistics
 }

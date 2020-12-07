@@ -1,0 +1,119 @@
+<wxs module="filters" src="goodsdetails.wxs"></wxs>
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">商品详情</view>
+</cu-custom>
+
+
+<!--商品轮播图-->
+<swiper class="screen-swiper square-dot bg-white" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{[goodsdata.pict_url]}}" wx:key="index">
+    <image src="{{item}}" mode='scaleToFill'></image>
+  </swiper-item>
+</swiper>
+
+
+<!--商品详情-->
+<view class="goods_content">
+  <view class="content">
+    <view class="goods_title">
+      <text>{{goodsdata.title}}</text>
+    </view>
+    <view class="goods_brief">
+      <text class="goods_desc">{{goodsdata.goods_desc}}</text>
+    </view>
+    <view class="goods_price">
+     <text class="discount" wx:if="{{coupondata.coupon_amount > 0}}">￥{{ filters.toFix(goodsdata.zk_final_price - coupondata.coupon_amount)}}</text>
+          <text class="discount" wx:else>￥{{goodsdata.zk_final_price?goodsdata.zk_final_price:goodsdata.reserve_price}}</text>
+      <text class="yuanjia" wx:if="{{coupondata.coupon_amount > 0}}">￥{{goodsdata.zk_final_price}}</text>
+    </view>
+  </view>
+  	<kaming-button open-type='share'>
+  <view class="share">
+    <text class="cuIcon-forward fenxiangicon"></text>
+    <view class="fenxiang">分享</view>
+  </view>
+  </kaming-button>
+</view>
+
+
+<!--商品属性-->
+<view class="bg-white grid  canui-goods-box text-gray text-sm">
+  <!-- <view class='padding-sm'>剩余：{{goodsdata.coupon_remain_quantity}}</view> -->
+  <view class='padding-sm text-center'>销量:{{goodsdata.volume}}笔</view>
+
+  <view class='padding-sm text-right'>店名:{{goodsdata.nick}}</view>
+  <!-- <view wx:for="{{goodsdata.unified_tags}}" wx:key="index">
+  <view class='padding-sm text-right'>{{item}}</view>
+  </view> -->
+
+</view>
+
+
+<view class=" bg-white centered" wx:if="{{coupondata.coupon_amount >0 && display}}">
+  <view class="youhuiquan-body bg-red " bindtap="purchase">
+    <view class="flex  p-xs margin-bottom-sm mb-sm">
+      <view class="flex-sub padding-sm ">
+       ￥<text class="youhuiquan">{{coupondata.coupon_amount}}</text>
+      </view>
+      <view class="flex-treble  padding-sm ">
+      <view class="menkan">
+        <view>
+          <text class="youhuiquanname">优惠券</text>
+        </view>
+        <view>
+          <!-- <text class="youhuiquantime" wx:if="{{}}">2010-01-02 - 2020-09-03</text> -->
+          <text class="youhuiquantime" wx:if="{{coupondata.coupon_start_fee > 0 }}">最低使用门槛:{{coupondata.coupon_start_fee}}元</text>
+          <text class="youhuiquantime" wx:else>无门槛使用</text>
+        </view>
+        </view>
+      </view>
+      <view class="flex-twice  padding-sm  centered ">
+        <button class="cu-btn bg-purple round sm shadow">复制淘口令</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!--商品详情-->
+<view class="cu-bar bg-white margin-top-xs solid-bottom">
+  <view class='action'>
+    <text>商品详情</text>
+  </view>
+</view>
+
+
+
+<view class="centered goodsimages" wx:for="{{goodsdata.small_images.string}}" wx:key="index">
+  <view class="images-body">
+    <view class="bg-img  padding-tb-xl" style="background-image: url('{{item}}'); height: 720rpx;">
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class="zhanwei">
+
+</view>
+
+
+<!--底部导航-->
+<view class="footer_nav">
+  <view class="nav_list" bindtap="gohome">
+  
+    <text class="cuIcon-shop fenxiangicon"></text>
+    <view class="nav_name">首页</view>
+  </view>
+  <view class="nav_list">
+    <text class="cuIcon-favorfill  text-blue fenxiangicon" wx:if="{{ifcollection}}" bindtap="deletecollection"></text>
+    <text class="cuIcon-favor fenxiangicon" wx:else bindtap="goodscollection"></text>
+    <view class="nav_name">收藏</view>
+  </view>
+
+  <view class="add_cart goods_buy">	<kaming-button open-type='share'>分享</kaming-button></view>
+  <view class="now_buy goods_buy" bindtap="purchase">{{display?"复制淘口令":"立即购买"}}</view>
+</view>

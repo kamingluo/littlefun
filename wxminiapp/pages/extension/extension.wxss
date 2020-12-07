@@ -1,0 +1,54 @@
+/* 顶部搜索 */
+.search{
+  width: 75%;
+  background-color: white;
+}
+.cu-custom .cu-bar {
+	padding-right: 0rpx;
+}
+.cu-custom .cu-bar .content {
+	width: calc(100% - 200rpx);
+}
+.cu-bar {
+  /* margin-top: 5rpx; */
+	display: block;
+	position: relative;
+	align-items: center;
+	min-height: 100rpx;
+	justify-content: space-between;
+}
+.cu-list.grid.no-border {
+	padding: 30rpx 0rpx 0rpx 0rpx;
+}
+.cu-list.grid.no-border>.cu-item {
+	padding-top: 10rpx;
+	padding-bottom: -10rpx
+}
+.icon-image image{
+  width: 75rpx;
+  height: 75rpx;
+}
+.tab-body{
+  margin-top: 10rpx;
+}
+
+.goodslist{
+  margin-bottom: 20rpx;
+}
+
+/* 返回顶部 */
+
+.goTop {
+  height: 70rpx;
+  width: 70rpx;
+  position: fixed;
+  bottom: 200rpx;
+  background: rgba(0, 0, 0, 0.3);
+  right: 30rpx;
+  border-radius: 50%;
+}
+
+.goTop image {
+  height: 50rpx;
+  width: 50rpx;
+}

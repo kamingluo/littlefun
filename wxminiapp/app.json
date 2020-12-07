@@ -12,6 +12,15 @@
     "pages/game/caiquan/caiquan",
     "pages/game/dice/dice",
     "pages/game/tenseconds/tenseconds",
+    "pages/extension/pdd/goodsdetails/goodsdetails",
+    "pages/extension/pdd/search/search",
+    "pages/extension/pdd/themegoods/themegoods",
+    "pages/extension/taobao/taobao",
+    "pages/extension/taobao/goodsdetails/goodsdetails",
+    "pages/extension/taobao/search/search",
+    "pages/extension/taobao/themegoods/themegoods",
+    "pages/extension/collection/collection",
+    "pages/extension/extension",
     "pages/test/test"
   ],
   "window": {
@@ -21,24 +30,12 @@
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
-"navigateToMiniProgramAppIdList": [
-  "wxf1f0d92f69dd80db",
-  "wx86a0b67ccf04472a",
-  "wxd53f125c7e4c7d44",
-  "wxb7801d04db4a354c",
-  "wxdb8afdceb2e24d7a",
-  "wx3adb314c8e9a6ed1",
-  "wxc6fa3baccd00d0cb",
-  "wx18b75705b93bd908",
-  "wxa47bf5fe7f026481",
-  "wx7f1760e66410e638"
-],
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#d0d0d0",
     "selectedColor": "#0066FF",
     "backgroundColor": "#ffffff",
-    "borderStyle":"white",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",

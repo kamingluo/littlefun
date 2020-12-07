@@ -3,7 +3,6 @@ const app = getApp()
 const {
   request
 } = require('./../../../utils/request.js');
-var Page = require('../../../utils/sdk/xmad/xmadx_sdk.min.js').xmad(Page).xmPage; 
 
 
 Page({

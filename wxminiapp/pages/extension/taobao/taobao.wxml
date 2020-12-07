@@ -1,0 +1,42 @@
+<cu-custom bgColor="bg-red" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">领淘宝优惠券</view>
+</cu-custom>
+
+ <view class="cu-bar search bg-white" bindtap="gosearch">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="输入淘宝商品名称搜索" confirm-type="search" confirm-type="search" disabled="true"></input>
+    </view>
+    <!-- <view class="action">
+      <button class="cu-btn bg-green shadow-blur round">搜索</button>
+    </view> -->
+  </view>
+
+
+
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{themelist}}" wx:key bindtap="clickswiper" data-data="{{item}}">
+    <image src="{{item.image_url}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+
+
+
+
+<view class="tab-body">
+  <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{tabdata}}" wx:key bindtap="tabSelect" data-data="{{item}}" data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+</view>
+
+<view class="goodslist"> 
+  <taobaogoodslist goodslist="{{goodslist}}"></taobaogoodslist>
+</view>
+
+
+<view class='goTop centered' hidden='{{!floorstatus}}'>
+	<image src='../../../images/up.png' bindtap="goTop"></image>
+</view>
