@@ -55,7 +55,7 @@ Component({
     },
     //点击事件
     tapEvent(e) {
-      //防止快速多次触发
+      防止快速多次触发
       const nowTime = Date.now();
       if (nowTime - preventShake < 500) {
         return

@@ -3,6 +3,7 @@ const {
   request
 } = require('./request.js')
 const baseConfig = require('./config.js')
+let preventShake = 0;
 
 function register(e) {
   var channel = e.query.channel || 0

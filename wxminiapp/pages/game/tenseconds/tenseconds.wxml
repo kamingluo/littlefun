@@ -48,7 +48,7 @@
 <!-- 广点通banner广告开始-->
 <view class='centered'>
   <view class='gdtad'>
-    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-88a7910854b55322" unit-id="adunit-88a7910854b55322"></ad>
+  <gdtad adtype="1" adid="adunit-88a7910854b55322" position="十秒挑战"></gdtad>
   </view>
 </view>
 <!-- 广点通banner广告结束-->

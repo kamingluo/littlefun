@@ -122,6 +122,7 @@ progress {
 
 .bannerad{
   border-radius: 200rpx;
+  height: 130rpx;
 }
 
 

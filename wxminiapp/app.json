@@ -50,16 +50,10 @@
         "selectedIconPath": "images/config/stask.png"
       },
       {
-        "pagePath": "pages/friends/friends",
-        "text": "好友",
-        "iconPath": "images/config/friends.png",
-        "selectedIconPath": "images/config/sfriends.png"
-      },
-      {
         "pagePath": "pages/extension/extension",
         "text": "找优惠",
-        "iconPath": "images/config/friends.png",
-        "selectedIconPath": "images/config/sfriends.png"
+        "iconPath": "images/config/coupon.png",
+        "selectedIconPath": "images/config/scoupon.png"
       },
       {
         "pagePath": "pages/my/my",

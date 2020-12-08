@@ -85,7 +85,7 @@
 
 
         <!-- 广点通banner广告开始-->
-
+        <!-- 
         <view class='centered' wx:if="{{gdtbannerposition.banneradposition1&&display &&indexconfig.gdtimg && gdtaddisplay}}">
           <view class="gdtad">
             <view bindtap='nobannerad' style="background-image: url('{{indexconfig.gdtimg}}');background-size: contain;background-repeat:round" class='gdtadimg'>
@@ -94,8 +94,7 @@
               </view>
             </view>
           </view>
-        </view>
-
+        </view> -->
         <!-- 广点通banner广告结束-->
 
         <!-- http://qiniu.luojiaming.vip/index2.gif -->
@@ -112,11 +111,22 @@
 
 
         <!-- 广点通moban广告开始-->
-        <view >
+        <!-- <view >
           <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
             <view class='gdtad'>
+            <view class='centered'>
               <ad-custom capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad-custom>
             </view>
+          </view>
+          </view>
+        </view> -->
+        <!-- 广点通moban广告结束-->
+
+
+        <!-- 广点通moban广告开始-->
+        <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
+          <view class='gdtad'>
+            <gdtad adtype="5" adid="{{gdtmobanposition.mobanadposition1}}" position="首页"></gdtad>
           </view>
         </view>
         <!-- 广点通moban广告结束-->
@@ -127,20 +137,10 @@
       </view>
     </view>
     <!-- 盒子结束-->
-
-
-
   </view>
-
-
 </view>
 
-
-
 <view class='cu-tabbar-height'></view>
-
-
-
 
 
 <!--广告暗刷开始-->

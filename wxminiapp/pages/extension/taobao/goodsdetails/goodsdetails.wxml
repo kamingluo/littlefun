@@ -76,6 +76,15 @@
 </view>
 
 
+<!-- 广点通banner广告开始-->
+<view class='centered'>
+  <view class='gdtad'>
+  <gdtad adtype="1" adid="adunit-88a7910854b55322" position="淘宝商品详情"></gdtad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->
+
+
 
 <!--商品详情-->
 <view class="cu-bar bg-white margin-top-xs solid-bottom">

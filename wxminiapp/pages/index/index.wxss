@@ -23,7 +23,7 @@
   height: inherit;
 }
 .gdtad{
-  width: 94%;
+  width:96%;
   border-radius: 15rpx;
   margin-top: 5rpx;
 }

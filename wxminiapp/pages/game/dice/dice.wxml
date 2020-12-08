@@ -134,7 +134,8 @@
 <!-- 广点通banner广告开始-->
 <view   class='ad'  wx:if="{{gdtaddisplay}}" >
   <view class='gdtad'  style="opacity: 0" >
-    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-3bb497d00c6fb7fe" unit-id="adunit-3bb497d00c6fb7fe"></ad>
+   <gdtad adtype="1" adid="adunit-3bb497d00c6fb7fe" position="猜大小页面"></gdtad>
+    <!-- <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-3bb497d00c6fb7fe" unit-id="adunit-3bb497d00c6fb7fe"></ad> -->
   </view>
 </view>
 <!-- 广点通banner广告结束-->

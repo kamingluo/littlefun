@@ -78,8 +78,8 @@ flex-basis: 400rpx;
 }
 
 .erweima{
-  position: fixed;
-  margin-top: -95rpx;
+  position: absolute;
+  margin-top: -130rpx;
   margin-left: 280rpx;
 
   width: 120rpx;

@@ -26,11 +26,11 @@
       <text class="yuanjia" wx:if="{{goodsdata.has_coupon}}">￥{{filters.toFix(goodsdata.min_group_price/100)}}</text>
     </view>
   </view>
-  	<kaming-button open-type='share'>
-  <view class="share">
-    <text class="cuIcon-forward fenxiangicon"></text>
-    <view class="fenxiang">分享</view>
-  </view>
+  <kaming-button open-type='share'>
+    <view class="share">
+      <text class="cuIcon-forward fenxiangicon"></text>
+      <view class="fenxiang">分享</view>
+    </view>
   </kaming-button>
 </view>
 
@@ -52,18 +52,18 @@
   <view class="youhuiquan-body bg-red " bindtap="purchase">
     <view class="flex  p-xs margin-bottom-sm mb-sm">
       <view class="flex-sub padding-sm ">
-       ￥<text class="youhuiquan">{{filters.toFix(goodsdata.coupon_discount/100)}}</text>
+        ￥<text class="youhuiquan">{{filters.toFix(goodsdata.coupon_discount/100)}}</text>
       </view>
       <view class="flex-treble  padding-sm ">
-      <view class="menkan">
-        <view>
-          <text class="youhuiquanname">优惠券</text>
-        </view>
-        <view>
-          <!-- <text class="youhuiquantime" wx:if="{{}}">2010-01-02 - 2020-09-03</text> -->
-          <text class="youhuiquantime" wx:if="{{goodsdata.coupon_min_order_amount > 0 }}">最低使用门槛:{{filters.toFix(goodsdata.coupon_min_order_amount/100)}}元</text>
-          <text class="youhuiquantime" wx:else>无门槛使用</text>
-        </view>
+        <view class="menkan">
+          <view>
+            <text class="youhuiquanname">优惠券</text>
+          </view>
+          <view>
+            <!-- <text class="youhuiquantime" wx:if="{{}}">2010-01-02 - 2020-09-03</text> -->
+            <text class="youhuiquantime" wx:if="{{goodsdata.coupon_min_order_amount > 0 }}">最低使用门槛:{{filters.toFix(goodsdata.coupon_min_order_amount/100)}}元</text>
+            <text class="youhuiquantime" wx:else>无门槛使用</text>
+          </view>
         </view>
       </view>
       <view class="flex-twice  padding-sm  centered ">
@@ -72,6 +72,14 @@
     </view>
   </view>
 </view>
+
+<!-- 广点通banner广告开始-->
+<view class='centered'>
+  <view class='gdtad'>
+  <gdtad adtype="1" adid="adunit-88a7910854b55322" position="拼多多商品详情"></gdtad>
+  </view>
+</view>
+<!-- 广点通banner广告结束-->
 
 
 
@@ -102,7 +110,7 @@
 <!--底部导航-->
 <view class="footer_nav">
   <view class="nav_list" bindtap="gohome">
-  
+
     <text class="cuIcon-shop fenxiangicon"></text>
     <view class="nav_name">首页</view>
   </view>
@@ -112,6 +120,8 @@
     <view class="nav_name">收藏</view>
   </view>
 
-  <view class="add_cart goods_buy">	<kaming-button open-type='share'>分享</kaming-button></view>
+  <view class="add_cart goods_buy">
+    <kaming-button open-type='share'>分享</kaming-button>
+  </view>
   <view class="now_buy goods_buy" bindtap="purchase">{{goodsdata.has_coupon?"领券购买":"立即购买"}}</view>
 </view>

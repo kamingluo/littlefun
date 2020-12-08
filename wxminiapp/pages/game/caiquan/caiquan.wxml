@@ -48,7 +48,8 @@
    <!-- 广点通banner广告开始-->
 <view  wx:if="{{gdtaddisplay}}" >
   <view class='gdtad'   style="opacity: 0" >
-    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-6b1bfd8a209c7e92" unit-id="adunit-6b1bfd8a209c7e92"></ad>
+  <gdtad adtype="1" adid="adunit-6b1bfd8a209c7e92" position="猜拳页面"></gdtad>
+    
   </view>
 </view>
 <!-- 广点通banner广告结束-->

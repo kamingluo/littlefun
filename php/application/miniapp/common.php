@@ -158,101 +158,87 @@ function reward($master_id,$openid){
 
     }
 
-
-
-    //淘宝请求生成
-function taobaorequest($parameters){
-  $app_key=Config('taobao_appkey');
-  $client_secret=Config('taobao_app_secret');
-  $url=Config('taobao_api_url');
-  $nowtime = date('Y-m-d H:i:s');//获取当前时间
-  $originaldata= array(
-      "app_key"=>$app_key,
-      "sign_method"=>"md5",
-      "format"=>"json",
-      "v"=>"2.0",
-      "timestamp"=>$nowtime,
-  );
-   $mergedata=array_merge($originaldata,$parameters); //合并参数
-   ksort($mergedata);// 将参数Key按字典顺序排序
-   // 生成规范化请求字符串
-   //return $mergedata;
-  $canonicalizedQueryString = '';
-  foreach ($mergedata as $k => $v)
-  {
-      if($k != "sign" && $v !== "" && !is_array($v)){ //array数组不参与生成
-          $canonicalizedQueryString .= $k . $v ;
-      }
-  }
-   $str = $client_secret.$canonicalizedQueryString.$client_secret;//前后加上client_secret
-   $encryption= md5($str);//md5加密处理
-   $upper = strtoupper($encryption);//加密之后的转换成大写
-   $sigin= array( 
-      "sign"=>$upper //生成sign参数加入到请求
-   );
-   $newdata=array_merge($mergedata,$sigin);
-   ksort($newdata);//再次排序下
-
-   $requestUrl = $url."?";
-
-  foreach ($newdata as $sysParamKey => $sysParamValue)
-{
-    $requestUrl .= "$sysParamKey=" . urlencode($sysParamValue) . "&";
-  }
-  $requestUrl = substr($requestUrl, 0, -1);
-
-  $resdata=getcurl($requestUrl);
-  return json_decode($resdata);
-}
-
-
-//拼多多请求生成
-function computeSignature($parameters){
-  $client_id=Config('pdd_client_id');
-  $client_secret=Config('pdd_client_secret');
-  $url=Config('pdd_api_url');
-  $nowtime = time();
-  $originaldata= array(
-      "client_id"=>$client_id,
-      "timestamp"=>$nowtime,
-  );
-   $mergedata=array_merge($originaldata,$parameters); //合并参数
-   ksort($mergedata);// 将参数Key按字典顺序排序
-   // 生成规范化请求字符串
-  $canonicalizedQueryString = '';
-  foreach ($mergedata as $k => $v)
-  {
-      if($k != "sign" && $v !== "" && !is_array($v)){ //array数组不参与生成
-          $canonicalizedQueryString .= $k . $v ;
-      }
-  }
-   $str = $client_secret.$canonicalizedQueryString.$client_secret;//前后加上client_secret
-   $encryption= md5($str);//md5加密处理
-   $upper = strtoupper($encryption);//加密之后的转换成大写
-   $sigin= array( 
-      "sign"=>$upper //生成sign参数加入到请求
-   );
-   $newdata=array_merge($mergedata,$sigin);
-   ksort($newdata);//再次排序下
-   $res = postCurl($url,$newdata,'json');//请求接口获得数据
-   $returndata=json_decode($res);//去除转义
-   return $returndata;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    
 }
 
+
+
+    //淘宝请求生成
+    function taobaorequest($parameters){
+      $app_key=Config('taobao_appkey');
+      $client_secret=Config('taobao_app_secret');
+      $url=Config('taobao_api_url');
+      $nowtime = date('Y-m-d H:i:s');//获取当前时间
+      $originaldata= array(
+          "app_key"=>$app_key,
+          "sign_method"=>"md5",
+          "format"=>"json",
+          "v"=>"2.0",
+          "timestamp"=>$nowtime,
+      );
+       $mergedata=array_merge($originaldata,$parameters); //合并参数
+       ksort($mergedata);// 将参数Key按字典顺序排序
+       // 生成规范化请求字符串
+       //return $mergedata;
+      $canonicalizedQueryString = '';
+      foreach ($mergedata as $k => $v)
+      {
+          if($k != "sign" && $v !== "" && !is_array($v)){ //array数组不参与生成
+              $canonicalizedQueryString .= $k . $v ;
+          }
+      }
+       $str = $client_secret.$canonicalizedQueryString.$client_secret;//前后加上client_secret
+       $encryption= md5($str);//md5加密处理
+       $upper = strtoupper($encryption);//加密之后的转换成大写
+       $sigin= array( 
+          "sign"=>$upper //生成sign参数加入到请求
+       );
+       $newdata=array_merge($mergedata,$sigin);
+       ksort($newdata);//再次排序下
+    
+       $requestUrl = $url."?";
+    
+      foreach ($newdata as $sysParamKey => $sysParamValue)
+    {
+        $requestUrl .= "$sysParamKey=" . urlencode($sysParamValue) . "&";
+      }
+      $requestUrl = substr($requestUrl, 0, -1);
+    
+      $resdata=getcurl($requestUrl);
+      return json_decode($resdata);
+    }
+    
+    
+    //拼多多请求生成
+    function computeSignature($parameters){
+      $client_id=Config('pdd_client_id');
+      $client_secret=Config('pdd_client_secret');
+      $url=Config('pdd_api_url');
+      $nowtime = time();
+      $originaldata= array(
+          "client_id"=>$client_id,
+          "timestamp"=>$nowtime,
+      );
+       $mergedata=array_merge($originaldata,$parameters); //合并参数
+       ksort($mergedata);// 将参数Key按字典顺序排序
+       // 生成规范化请求字符串
+      $canonicalizedQueryString = '';
+      foreach ($mergedata as $k => $v)
+      {
+          if($k != "sign" && $v !== "" && !is_array($v)){ //array数组不参与生成
+              $canonicalizedQueryString .= $k . $v ;
+          }
+      }
+       $str = $client_secret.$canonicalizedQueryString.$client_secret;//前后加上client_secret
+       $encryption= md5($str);//md5加密处理
+       $upper = strtoupper($encryption);//加密之后的转换成大写
+       $sigin= array( 
+          "sign"=>$upper //生成sign参数加入到请求
+       );
+       $newdata=array_merge($mergedata,$sigin);
+       ksort($newdata);//再次排序下
+       $res = postCurl($url,$newdata,'json');//请求接口获得数据
+       $returndata=json_decode($res);//去除转义
+       return $returndata;
+    }
+    
