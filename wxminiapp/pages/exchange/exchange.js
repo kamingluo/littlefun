@@ -4,6 +4,8 @@ const app = getApp()
 const {
   request
 } = require('./../../utils/request.js');
+const addata = require('./../../utils/addata.js')
+
 Page({
 
   /**
@@ -19,6 +21,8 @@ Page({
     fram:false,
     fram2: false,
     display: false, //是否展示
+    moban: {},
+    banneradlist: {}
 
 
   },
@@ -28,7 +32,11 @@ Page({
    */
   onLoad: function(options) {
     this.goodsdata()
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
     this.setData({
+      moban: moban,
+      banneradlist: banneradlist,
       display: app.globalData.display || false
     })
   },

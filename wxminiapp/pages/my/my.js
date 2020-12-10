@@ -6,19 +6,32 @@ const {
 const {
   share
 } = require('./../../utils/share.js');
+
+const addata = require('./../../utils/addata.js')
 Page({
 
   data: {
     userdata: '',
     display: false, //是否展示
     gdtaddisplay: false, //视频是否展示展示
-    gdtmobanposition: {}//模板广告
+    gdtmobanposition: {},//模板广告
+    adconfig: "0",//0展示模板 1展示banner
+    moban: {},
+    banneradlist: {}
 
   },
 
   onLoad: function (options) {
     this.addisplay()
     this.gdtmobanposition()
+    this.adconfig()
+
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist
+    })
   },
 
   onShow: function () {
@@ -26,6 +39,20 @@ Page({
 
   },
 
+
+  adconfig: function () {
+    request({
+      service: 'ad/gdtad/haveadconfig',
+      method: 'GET',
+      success: res => {
+        console.log('首页广告展示规则', res);
+        this.setData({
+          adconfig: res.adconfig,
+        })
+      }
+    })
+
+  },
 
 
 

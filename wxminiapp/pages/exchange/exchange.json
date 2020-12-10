@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "kaming-button": "/components/kaming-button/index",
-    "cu-custom": "/colorui/components/cu-custom"
+    "cu-custom": "/colorui/components/cu-custom",
+    "gdtad": "/components/gdtAd/index"
   }
 }

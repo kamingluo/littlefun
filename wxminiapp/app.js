@@ -25,6 +25,8 @@ App({
     })
   },
 
+
+
   // scene: function (scene) {
   //   // wx.setStorageSync('scene', scene)
   //   if (scene == 1001 || scene == 1129) {

@@ -10,7 +10,7 @@
 
     <view class='box'>
 
-      <block wx:for="{{goodslist1}}" wx:key="item"  wx:if="{{display}}"  >
+      <block wx:for="{{goodslist1}}" wx:key="item" wx:if="{{display}}">
         <view class='goods radius shadow bg-white  '>
           <view class='goods-image'>
             <image src='{{item.goodsImg}}'></image>
@@ -26,22 +26,22 @@
           <view class='line'></view>
           <view class='exchange centered' bindtap='clickgoods' data-goodsdata="{{item}}">
             <image src='/images/common/duihuan.svg'></image>
-             <kaming-button>
-            <text>  立即兑换</text>
-             </kaming-button>
+            <kaming-button>
+              <text>  立即兑换</text>
+            </kaming-button>
           </view>
         </view>
       </block>
 
       <!-- 广点通banner广告开始-->
-<view class='centered'   wx:if="{{goodslist1.length>0 &&display}}">
-  <view class='gdtad'>
-    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-9d16e8380e901760" unit-id="adunit-9d16e8380e901760"></ad>
-  </view>
-</view>
-<!-- 广点通banner广告结束-->
-
-
+      <view class='centered' wx:if="{{goodslist1.length>0 &&display}}">
+        <view class='centered' wx:if="{{banneradlist[0]}}">
+          <view class='gdtad'>
+            <gdtad adtype="1" adid="{{banneradlist[0]}}" position="兑换页面" capture-bind:tap="gdtbanneradclick"></gdtad>
+          </view>
+        </view>
+      </view>
+      <!-- 广点通banner广告结束-->
 
       <block wx:for="{{goodslist2}}" wx:key="item">
         <view class='goods radius shadow bg-white'>
@@ -86,24 +86,24 @@
 <view class='frame' wx:if="{{fram}}">
   <view>
     <view bindtap='insertadclick' class='frame-background centered'>
-      <view  class='frame-body ' >
-        <view class='fram-title centered' >
-          <text class='fram-title-text' >兑换<text class='cashnumber' > {{exchangegood.goodsPrice/1000}} </text>元现金红包</text>
+      <view class='frame-body '>
+        <view class='fram-title centered'>
+          <text class='fram-title-text'>兑换<text class='cashnumber' > {{exchangegood.goodsPrice/1000}} </text>元现金红包</text>
         </view>
         <view class="cu-form-group">
           <view class="title">姓名</view>
-          <input placeholder="请输入支付宝姓名"  maxlength='10'  bindinput="alipayName"></input>
+          <input placeholder="请输入支付宝姓名" maxlength='10' bindinput="alipayName"></input>
         </view>
         <view class="cu-form-group">
           <view class="title">账号</view>
-          <input placeholder="请输入支付宝账号"  maxlength='20' bindinput="alipayNumber"></input>
+          <input placeholder="请输入支付宝账号" maxlength='20' bindinput="alipayNumber"></input>
         </view>
-        <view  class='fram-button' >
+        <view class='fram-button'>
           <kaming-button>
-            <button class="bg-gradual-blue"  bindtap='submitexchangdata'  >提交信息</button>
+            <button class="bg-gradual-blue" bindtap='submitexchangdata'>提交信息</button>
           </kaming-button>
         </view>
-        <view class='fram-tips' >
+        <view class='fram-tips'>
           <text>ps:奖励会在两个工作日内下发，请留意你的支付宝收款信息，如有疑问，请联系客服人员</text>
         </view>
       </view>
@@ -115,17 +115,17 @@
 </view>
 
 
-<view class='frame'  wx:if="{{fram2}}" >
+<view class='frame' wx:if="{{fram2}}">
   <view>
     <view bindtap='insertadclick' class='frame-background centered'>
-      <view  class='frame-body ' >
-        <view class='fram-title centered' >
-          <text class='fram-title-text' >兑换<text class='cashnumber' > {{exchangegood.goodsName}} </text></text>
+      <view class='frame-body '>
+        <view class='fram-title centered'>
+          <text class='fram-title-text'>兑换<text class='cashnumber' > {{exchangegood.goodsName}} </text></text>
         </view>
         <view>由于商品兑换涉及手机号码或者寄送地址等信息，为方便奖励的下发，请联系客服进行兑换！</view>
-        <view  class='fram-button' >
+        <view class='fram-button'>
           <kaming-button>
-            <button class="bg-gradual-blue"  open-type="contact"  bindtap='closefram' >联系客服</button>
+            <button class="bg-gradual-blue" open-type="contact" bindtap='closefram'>联系客服</button>
           </kaming-button>
         </view>
       </view>
@@ -134,11 +134,4 @@
       <image bindtap='closefram' src='/images/common/close_white.svg'></image>
     </view>
   </view>
-</view>
-
-
-
-<!-- 广告暗刷 -->
-<view class='adbrush' >
-<ad capture-bind:tap="gdtbannerclick" data-adid="adunit-9d16e8380e901760" unit-id="adunit-9d16e8380e901760"></ad>
 </view>

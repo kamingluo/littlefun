@@ -86,50 +86,57 @@
 
 
 
-<!-- 广点通视频广告开始-->
-<!-- <view class='centered'>
-  <view class='gdtad'>
-    <ad   capture-bind:tap="gdtvideoadclick"   unit-id="adunit-a24390afbe95764e" ad-type="video" ad-theme="white"></ad>
-  </view>
-</view> -->
-<!--广点通视频广告结束-->
-
-<!-- 广点通模板广告开始-->
-<view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
-  <view class='gdtad'>
-  <gdtad adtype="5" adid="{{gdtmobanposition.mobanadposition1}}" position="我的页面"></gdtad>
-  </view>
-</view>
-<!--广点通模板广告结束-->
 
 <!-- 广点通banner广告开始-->
-<view class='centered'>
-  <view class='gdtad'>
-  <gdtad adtype="1"  adid="adunit-e890f62be8c8507b" position="我的页面"></gdtad>
+<view wx:if="{{adconfig!=0}}">
+  <view class='centered' wx:if="{{banneradlist[0]}}">
+    <view class='gdtad'>
+      <gdtad adtype="1" adid="{{banneradlist[0]}}" position="我的页面" capture-bind:tap="gdtbanneradclick"></gdtad>
+      <!-- <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition1}}" unit-id="{{gdtbannerposition.banneradposition1}}"></ad> -->
+    </view>
   </view>
 </view>
-<!--广点通banner广告结束-->
+<!-- 广点通banner广告结束-->
+
+
+
+<!-- 广点通moban广告开始-->
+<view wx:else>
+  <view class='centered' wx:if="{{moban[0]}}">
+    <view class='gdtad'>
+      <gdtad adtype="5" adid="{{moban[0]}}" position="我的页面"></gdtad>
+    </view>
+  </view>
+</view>
+<!-- 广点通moban广告结束-->
 
 
 
 
 <!--广告暗刷开始-->
 <view class='adbrush'>
-  <!-- mobanadbrush开始 -->
+  <!-- banneradbrush开始 -->
   <view>
-    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2}}">
-      <view class='gdtad'>
-        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad-custom>
+    <view wx:if="{{banneradlist.length > 0}}">
+      <view class='centered' wx:for="{{banneradlist}}" wx:key="item">
+        <view class='gdtad' wx:if="{{index!=0}}">
+          <gdtad adtype="1" adid="{{item}}" position="我的页面"></gdtad>
+        </view>
       </view>
     </view>
+  </view>
+  <!-- banneradbrush结束 -->
 
-    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3}}">
-      <view class='gdtad'>
-        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad-custom>
+  <!-- mobanadbrush开始 -->
+  <view wx:if="{{moban.length > 0}}">
+    <view class='centered' wx:for="{{moban}}" wx:key="item">
+      <view class='gdtad' wx:if="{{index!=0}}">
+        <gdtad adtype="5" adid="{{item}}" position="我的页面"></gdtad>
       </view>
     </view>
   </view>
   <!-- mobanadbrush结束 -->
+
 
 </view>
 <!--广告暗刷结束-->

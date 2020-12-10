@@ -6,6 +6,7 @@ const {
   share
 } = require('./../../utils/share.js');
 const scoreOperation = require('./../../utils/score.js');
+const addata = require('./../../utils/addata.js')
 let preventShake = 0; //防止快速点击
 let interstitialAd = null //插屏广告
 
@@ -21,7 +22,8 @@ Page({
     gdtaddisplay: false, //视频是否展示展示
     gdtbannerposition:null,
     addweixin:false,
-    gdtmobanposition:{}
+    moban: {},
+    banneradlist: {}
 
   },
 
@@ -30,7 +32,13 @@ Page({
     this.addisplay()
     this.gdtbannerposition()
     this.addweixin()
-    this.gdtmobanposition()
+
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist
+    })
   },
 
   onReady: function() {},
@@ -468,39 +476,6 @@ Page({
     });
 
   },
-
-  gdtmobanposition: function () {
-    var that = this
-    let number = Math.floor(Math.random() * 3)
-    if (number == 1) {
-      var gdtmobanposition = {
-        mobanadposition1: 'adunit-ac1e750ff9040266',
-        mobanadposition2: 'adunit-cdf3dc40b4cbaaeb',
-        mobanadposition3: 'adunit-f99bb8a5241c5dff',
-      }
-
-    } else if (number == 2) {
-      var gdtmobanposition = {
-        mobanadposition1: 'adunit-cdf3dc40b4cbaaeb',
-        mobanadposition2: 'adunit-f99bb8a5241c5dff',
-        mobanadposition3: 'adunit-ac1e750ff9040266',
-      }
-    } else {
-      var gdtmobanposition = {
-        mobanadposition1: 'adunit-f99bb8a5241c5dff',
-        mobanadposition2: 'adunit-ac1e750ff9040266',
-        mobanadposition3: 'adunit-cdf3dc40b4cbaaeb',
-      }
-    }
-
-    this.setData({
-      gdtmobanposition: gdtmobanposition
-    })
-
-
-  },
-
-
 
 
 

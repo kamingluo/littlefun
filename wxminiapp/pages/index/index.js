@@ -29,6 +29,9 @@ Page({
     taskscore: null, //任务奖励
     adname: "", //AD名称
     gdtbannerposition: '', //广点通位置
+    adconfig:"0",//0展示banner 1展示模板
+    moban: {},
+    banneradlist:{}
     
 
   },
@@ -36,6 +39,7 @@ Page({
     this.indexData()
     this.indexconfig()
     this.miniappadData()
+    this.adconfig()
     this.gdtbannerposition()
     this.gdtmobanposition()
     this.addisplay()
@@ -48,7 +52,27 @@ Page({
   onShow: function() {
     this.playtask()
     let moban = addata.havemobansome()
-    console.log("feed广告数据",moban)
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist
+    })
+  },
+
+  adconfig:function(){
+
+    request({
+      service: 'ad/gdtad/haveadconfig',
+      method: 'GET',
+      success: res => {
+        console.log('首页广告展示规则', res);
+        this.setData({
+          adconfig: res.adconfig,
+          
+        })
+      }
+    })
+
   },
 
 

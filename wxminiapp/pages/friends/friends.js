@@ -18,7 +18,9 @@ Page({
     scoresum: 0,
     display: false, //是否展示
     gdtaddisplay: false,
-    gdtmobanposition:{}
+    gdtmobanposition:{},
+    moban: {},
+    banneradlist: {}
   },
 
   /**
@@ -29,6 +31,12 @@ Page({
     this.display()
     this.addisplay()
     this.gdtmobanposition()
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist,
+    })
 
   },
 

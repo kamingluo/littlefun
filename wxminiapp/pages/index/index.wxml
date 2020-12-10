@@ -81,10 +81,7 @@
         <!-- 第三方小程序结束 -->
 
 
-
-
-
-        <!-- 广点通banner广告开始-->
+        <!-- 广点通banner广告有封面开始-->
         <!-- 
         <view class='centered' wx:if="{{gdtbannerposition.banneradposition1&&display &&indexconfig.gdtimg && gdtaddisplay}}">
           <view class="gdtad">
@@ -100,33 +97,23 @@
         <!-- http://qiniu.luojiaming.vip/index2.gif -->
 
         <!-- 广点通banner广告开始-->
-        <!-- <view wx:else>
-          <view class='centered' wx:if="{{gdtbannerposition.banneradposition1}}">
+        <view wx:if="{{adconfig==0}}">
+          <view class='centered' wx:if="{{banneradlist[0]}}">
             <view class='gdtad'>
-              <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition1}}" unit-id="{{gdtbannerposition.banneradposition1}}"></ad>
+              <gdtad adtype="1" adid="{{banneradlist[0]}}" position="首页" capture-bind:tap="gdtbanneradclick"></gdtad>
             </view>
           </view>
-        </view> -->
+        </view>
         <!-- 广点通banner广告结束-->
 
 
+
         <!-- 广点通moban广告开始-->
-        <!-- <view >
-          <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
+        <view wx:else>
+          <view class='centered' wx:if="{{moban[0]}}">
             <view class='gdtad'>
-            <view class='centered'>
-              <ad-custom capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad-custom>
+              <gdtad adtype="5" adid="{{moban[0]}}" position="首页"></gdtad>
             </view>
-          </view>
-          </view>
-        </view> -->
-        <!-- 广点通moban广告结束-->
-
-
-        <!-- 广点通moban广告开始-->
-        <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
-          <view class='gdtad'>
-            <gdtad adtype="5" adid="{{gdtmobanposition.mobanadposition1}}" position="首页"></gdtad>
           </view>
         </view>
         <!-- 广点通moban广告结束-->
@@ -140,46 +127,33 @@
   </view>
 </view>
 
+
 <view class='cu-tabbar-height'></view>
 
 
 <!--广告暗刷开始-->
 <view class='adbrush'>
-
   <!-- banneradbrush开始 -->
   <view>
-    <view class='centered' wx:if="{{gdtbannerposition.banneradposition2 && gdtbanneraddelay1 && !gdtbanneraddelay2}}">
-      <view class='gdtad'>
-        <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition2}}" unit-id="{{gdtbannerposition.banneradposition2}}"></ad>
-      </view>
-    </view>
-
-    <view class='centered' wx:if="{{gdtbannerposition.banneradposition3 && gdtbanneraddelay2 }}">
-      <view class='gdtad'>
-        <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="{{gdtbannerposition.banneradposition3}}" unit-id="{{gdtbannerposition.banneradposition3}}"></ad>
+    <view wx:if="{{banneradlist.length > 0}}">
+      <view class='centered' wx:for="{{banneradlist}}" wx:key="item">
+        <view class='gdtad' wx:if="{{index!=0}}">
+          <gdtad adtype="1" adid="{{item}}" position="首页"></gdtad>
+        </view>
       </view>
     </view>
   </view>
   <!-- banneradbrush结束 -->
 
-
   <!-- mobanadbrush开始 -->
-  <view>
-    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2 && gdtbanneraddelay1 && !gdtbanneraddelay2}}">
-      <view class='gdtad'>
-        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad-custom>
-      </view>
-    </view>
-
-    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3 && gdtbanneraddelay2}}">
-      <view class='gdtad'>
-        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad-custom>
+  <view wx:if="{{moban.length > 0}}">
+    <view class='centered' wx:for="{{moban}}" wx:key="item">
+      <view class='gdtad' wx:if="{{index!=0}}">
+        <gdtad adtype="5" adid="{{item}}" position="首页"></gdtad>
       </view>
     </view>
   </view>
   <!-- mobanadbrush结束 -->
-
-
 
 
 </view>

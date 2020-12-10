@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue"   wx:if="{{!display}}" >
+<cu-custom bgColor="bg-gradual-blue" wx:if="{{!display}}">
   <view slot="content">好友</view>
 </cu-custom>
 
@@ -7,20 +7,21 @@
 
 
 <!-- 111111 -->
-<view   wx:if="{{display}}">
+<view wx:if="{{display}}">
   <view class="bg-img  padding-tb-xl" style="background-image: url('http://miniapplittlefun.gzywudao.top/friends.jpg');height: 300rpx;">
   </view>
 
-
-   <!-- 广点通banner广告开始-->
-<view class='centered'  wx:if="gdtaddisplay" >
-  <view class='gdtad2' style="opacity: 0">
-    <ad capture-bind:tap="gdtbanneradclick"  data-adid="adunit-4c19107c204f1900" unit-id="adunit-4c19107c204f1900"></ad>
+  <!-- 广点通banner广告开始-->
+  <view class='centered' wx:if="gdtaddisplay">
+    <view class='gdtad2' style="opacity: 0">
+      <view class='centered' wx:if="{{banneradlist[0]}}">
+          <view class='gdtad'>
+            <gdtad adtype="1" adid="{{banneradlist[0]}}" position="好友页面" capture-bind:tap="gdtbanneradclick"></gdtad>
+          </view>
+        </view>
+    </view>
   </view>
-</view>
-<!-- 广点通banner广告结束-->
-
-
+  <!-- 广点通banner广告结束-->
 
   <view>
     <view class='body centered'>
@@ -101,12 +102,6 @@
     </view>
   </view>
 
-
-
-
-
-
-
   <view class='cu-tabbar-height'></view>
   <view class='cu-tabbar-height'></view>
 
@@ -131,58 +126,27 @@
 <!-- 22222 -->
 <view wx:else>
 
-<view class="bg-img  padding-tb-xl" style="background-image: url('http://miniapplittlefun.gzywudao.top/friend2.jpg');height: 400rpx;">
+  <view class="bg-img  padding-tb-xl" style="background-image: url('http://miniapplittlefun.gzywudao.top/friend2.jpg');height: 400rpx;">
   </view>
 
-  <view  class='friends '>
-  <view class='centered'> <text>如果你觉得这个小程序好玩.</text>  </view>
-  <view class='centered'> <text>就分享给好友一起玩吧.</text>  </view>
-  <view><button  class="bg-gradual-blue"  open-type='share' >分享给好友</button></view>
+  <view class='friends '>
+    <view class='centered'>
+      <text>如果你觉得这个小程序好玩.</text> </view>
+    <view class='centered'>
+      <text>就分享给好友一起玩吧.</text> </view>
+    <view>
+      <button class="bg-gradual-blue" open-type='share'>分享给好友</button>
+    </view>
   </view>
 
   <!-- 广点通banner广告开始-->
-<view class='centered'  >
-  <view class='gdtad'>
-    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-4c19107c204f1900" unit-id="adunit-4c19107c204f1900"></ad>
+  <view class='centered'>
+     <view class='centered' wx:if="{{banneradlist[0]}}">
+          <view class='gdtad'>
+            <gdtad adtype="1" adid="{{banneradlist[0]}}" position="好友页面" capture-bind:tap="gdtbanneradclick"></gdtad>
+          </view>
+        </view>
   </view>
-</view>
-<!-- 广点通banner广告结束-->
+  <!-- 广点通banner广告结束-->
 
 </view>
-
-
-
-
-
-
-<!--广告暗刷开始-->
-<view class='adbrush'>
-<!-- mobanadbrush开始 -->
-  <view>
-
-  <view class='centered' wx:if="{{gdtmobanposition.mobanadposition1}}">
-      <view class='gdtad'>
-        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition1}}" unit-id="{{gdtmobanposition.mobanadposition1}}"></ad-custom>
-      </view>
-    </view>
-
-    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition2}}">
-      <view class='gdtad'>
-        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition2}}" unit-id="{{gdtmobanposition.mobanadposition2}}"></ad-custom>
-      </view>
-    </view>
-
-    <view class='centered' wx:if="{{gdtmobanposition.mobanadposition3}}">
-      <view class='gdtad'>
-        <ad-custom capture-bind:tap="gdtmobanadclick" class="gdtad" data-adid="{{gdtmobanposition.mobanadposition3}}" unit-id="{{gdtmobanposition.mobanadposition3}}"></ad-custom>
-      </view>
-    </view>
-  </view>
-  <!-- mobanadbrush结束 -->
-
-  
-
-
-
-</view>
-<!--广告暗刷结束-->
