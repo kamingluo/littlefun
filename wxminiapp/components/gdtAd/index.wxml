@@ -1,16 +1,16 @@
 <!-- banner广告 -->
 <view wx:if="{{adtype==1}}">
-	<ad capture-bind:tap="adclick" ad-intervals="30" data-adtype="{{adtype}}" data-position="{{position}}" class="gdtad" unit-id="{{adid}}"></ad>
+	<ad capture-bind:tap="adclick" ad-intervals="30" data-adtype="{{adtype}}" data-position="{{position}}" class="gdtad" unit-id="{{adid}}" bindload="adsuccess" binderror="aderr"></ad>
 </view>
 <!-- 格子广告 -->
 <view wx:elif="{{adtype==3}}">
-	<ad capture-bind:tap="adclick" unit-id="{{adid}}" data-adtype="{{adtype}}" data-position="{{position}}" ad-intervals="30" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="black"></ad>
+	<ad capture-bind:tap="adclick" unit-id="{{adid}}" data-adtype="{{adtype}}" data-position="{{position}}" ad-intervals="30" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="black" bindload="adsuccess" binderror="aderr"></ad>
 </view>
 <!-- 视频广告 -->
 <view wx:elif="{{adtype==4}}">
-	<ad capture-bind:tap="adclick" ad-intervals="30"  data-adtype="{{adtype}}" data-position="{{position}}" unit-id="{{adid}}" ad-type="video" ad-theme="white"></ad>
+	<ad capture-bind:tap="adclick" ad-intervals="30"  data-adtype="{{adtype}}" data-position="{{position}}" unit-id="{{adid}}" ad-type="video" ad-theme="white" bindload="adsuccess" binderror="aderr"></ad>
 </view>
 <!-- 模板广告 -->
 <view wx:elif="{{adtype==5}}">
-	<ad-custom capture-bind:tap="adclick" ad-intervals="30"  data-adtype="{{adtype}}" data-position="{{position}}" unit-id="{{adid}}"></ad-custom>
+	<ad-custom capture-bind:tap="adclick" ad-intervals="30"  data-adtype="{{adtype}}" data-position="{{position}}" unit-id="{{adid}}" bindload="adsuccess" binderror="aderr"></ad-custom>
 </view>

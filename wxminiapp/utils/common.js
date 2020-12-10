@@ -105,6 +105,22 @@ function clickgdtadstatistics(e) {
   })
 }
 
+//广告加载成功失败统计
+
+function adloadstatistics(e){
+  let data = e;
+  let user_id = wx.getStorageSync('userdata').id || 0;
+  data.user_id = user_id;
+  request({
+    service: 'ad/gdtad/adload',
+    data: data,
+    success: res => {
+      console.log("加载广告统计返回", res)
+    }
+  })
+
+}
+
 
 
 
@@ -114,5 +130,6 @@ module.exports = {
   insidejump: insidejump,
   xmaddata: xmaddata,
   shareconfig: shareconfig,
-  clickgdtadstatistics: clickgdtadstatistics
+  clickgdtadstatistics: clickgdtadstatistics,
+  adloadstatistics: adloadstatistics
 }

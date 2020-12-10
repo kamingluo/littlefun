@@ -53,6 +53,30 @@ Component({
       common.clickgdtadstatistics(data)
 
     },
+
+    adsuccess: function (e) {
+       console.log("广告加载成功",e)
+      // console.log(e.currentTarget.dataset.position)
+      // console.log(e.currentTarget.dataset.adtype)
+      let data = {
+        'adtype': e.currentTarget.dataset.adtype,
+        'position': e.currentTarget.dataset.position,
+        'state':0
+      };//state=0成功1失败
+      //common.adloadstatistics(data)
+    },
+
+    aderr: function (e) {
+      console.log("广告加载失败", e)
+      let data = {
+        'adtype': e.currentTarget.dataset.adtype,
+        'position': e.currentTarget.dataset.position,
+        'state': 1
+      };//state=0成功1失败
+      //common.adloadstatistics(data)
+    },
+
+
     //点击事件
     tapEvent(e) {
       防止快速多次触发

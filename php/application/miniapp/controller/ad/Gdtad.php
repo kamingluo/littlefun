@@ -127,6 +127,36 @@ class Gdtad
   }
 
 
+ //广点通广告加载统计
+	public function adload(Request $request)
+  {
+  $user_id =$request->param("user_id");//用户id
+  if($user_id==0){
+    $resdata=['state'   => '200','message'  => "官方审核人员没id不统计"];
+      return $resdata;
+  }
+  $channel=$request->param("channel");//渠道
+  $adtype=$request->param("adtype");//广告类型，1：banner，2：激励视频，3：格子，4：视频广告 5:模板广告，6：小盟广告
+  $position=$request->param("position");//位置
+  $state=$request->param("state");//状态
+  $time =date('Y-m-d H:i:s',time());//获取当前时间
+  $adres = ['id'=>'','user_id' =>$user_id,'channel' =>$channel,'adtype' =>$adtype,'position' =>$position,'state' =>$state,'create_time' =>$time];
+  $addata=db('gdt_ad_load')->insert($adres);
+  $resdata=['state'   => '200','message'  => "广告加载统计成功"];
+  return $resdata;
+  }
+
+
+  public function haveadconfig(){
+    $data = db('config')->where('id', 4)->value('value');
+    $adconfig=json_decode($data);
+    // return $data ;  json_encode() 和 json_decode()
+    $state=['state'   => '200','message'  => "首页和我的页面广告展示配置", 'adconfig'   => $data];
+    // $resdata=array_merge($state,array('taskconfig'=>$adconfig));
+    return $state ;
+}
+
+
 	public function test(Request $request){
         $master_id =$request->param("master_id");
         $openid =$request->param("openid");
