@@ -7,6 +7,7 @@ const {
 } = require('./../../utils/share.js');
 const scoreOperation = require('./../../utils/score.js');
 const addata = require('./../../utils/addata.js')
+const baseConfig = require('./../../utils/config.js')//配置文件
 let preventShake = 0; //防止快速点击
 let interstitialAd = null //插屏广告
 
@@ -125,7 +126,7 @@ Page({
     // 在页面onLoad回调事件中创建激励视频广告实例
     if (wx.createRewardedVideoAd) {
       videoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-0560e4c071403ecd'
+        adUnitId: baseConfig.videoadid
       })
       videoAd.onLoad(() => {
         //console.log("onLoad")

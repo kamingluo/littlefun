@@ -6,6 +6,7 @@ const scoreOperation = require('./../../../utils/score.js');
 const {
   share
 } = require('./../../../utils/share.js');
+const addata = require('./../../../utils/addata.js')
 
 
 Page({
@@ -26,6 +27,8 @@ Page({
     showBet: false, // 是否显示黑盘中的筹码
     timeArray: [],
     display: false,
+    moban: {},
+    banneradlist: {},
     gdtaddisplay: false
   },
   putChip: function(event) {
@@ -250,7 +253,11 @@ Page({
 
   },
 
-  onLoad: function() {},
+  onLoad: function() {
+    
+
+
+  },
 
   //获取用户信息
   userdata: function() {

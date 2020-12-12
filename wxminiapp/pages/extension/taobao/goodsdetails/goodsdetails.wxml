@@ -77,9 +77,9 @@
 
 
 <!-- 广点通banner广告开始-->
-<view class='centered'>
+<view class='centered' wx:if="{{banneradlist[0]}}">
   <view class='gdtad'>
-  <gdtad adtype="1" adid="adunit-88a7910854b55322" position="淘宝商品详情"></gdtad>
+  <gdtad adtype="1" adid="{{banneradlist[0]}}" position="淘宝商品详情"></gdtad>
   </view>
 </view>
 <!-- 广点通banner广告结束-->
@@ -102,6 +102,17 @@
   </view>
 </view>
 
+
+
+<!-- 广点通moban广告开始-->
+<view>
+  <view class='centered' wx:if="{{moban[0]}}">
+    <view class='gdtad'>
+      <gdtad adtype="5" adid="{{moban[0]}}" position="淘宝商品详情"></gdtad>
+    </view>
+  </view>
+</view>
+<!-- 广点通moban广告结束-->
 
 
 

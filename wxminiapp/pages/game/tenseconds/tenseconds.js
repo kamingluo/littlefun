@@ -4,6 +4,8 @@ const {
   request
 } = require('./../../../utils/request.js');
 const scoreOperation = require('./../../../utils/score.js');
+const addata = require('./../../../utils/addata.js')
+const baseConfig = require('./../../../utils/config.js')//配置文件
 
 
 Page({
@@ -19,6 +21,8 @@ Page({
     gamenum:0,
     gamescore:100,
     todaynum:0,
+    moban: {},
+    banneradlist: {},
 
   },
 
@@ -28,6 +32,13 @@ Page({
   onLoad: function (options) {
     var that = this;
     // this.startSetInter()
+
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist
+    })
 
   },
 
@@ -208,7 +219,7 @@ Page({
     // 在页面onLoad回调事件中创建激励视频广告实例
     if (wx.createRewardedVideoAd) {
       videoAd = wx.createRewardedVideoAd({
-        adUnitId: 'adunit-0560e4c071403ecd'
+        adUnitId: baseConfig.videoadid
       })
       videoAd.onLoad(() => {
       })

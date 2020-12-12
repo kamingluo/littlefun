@@ -2,13 +2,16 @@ const app = getApp();
 const {
   request
 } = require('./../../../../utils/request.js');
+const addata = require('./../../../../utils/addata.js')
 Page({
   data: {
     goodsdata: {},
     miniappurldata: {},
     ifcollection: false,
     goods_id: null,
-    search_id: null
+    search_id: null,
+    moban: {},
+    banneradlist: {},
   },
   onLoad: function (options) {
     console.log(options)
@@ -19,6 +22,13 @@ Page({
       search_id: search_id
     })
     let newgoodsid = [goods_id];
+
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist
+    })
 
     this.goodsdata(newgoodsid)
     this.miniappurl(newgoodsid, search_id)

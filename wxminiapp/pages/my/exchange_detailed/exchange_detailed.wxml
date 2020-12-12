@@ -52,11 +52,3 @@
   </view>
 </view>
 
-
-<!-- 广点通banner广告开始-->
-<view class='adbrush'>
-  <view class='gdtad'>
-    <ad capture-bind:tap="gdtbanneradclick" class="gdtad" data-adid="adunit-9d16e8380e901760" unit-id="adunit-9d16e8380e901760"></ad>
-  </view>
-</view>
-<!-- 广点通banner广告结束-->

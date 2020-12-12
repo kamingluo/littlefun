@@ -3,6 +3,7 @@ const {
 } = require('./../../utils/request.js');
 const common = require('./../../utils/common.js');
 const baseConfig = require('./../../utils/config.js')//配置文件
+
 const app = getApp();
 Page({
 

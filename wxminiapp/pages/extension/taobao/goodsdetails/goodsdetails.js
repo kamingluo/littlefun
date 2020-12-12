@@ -2,6 +2,7 @@ const app = getApp();
 const {
   request
 } = require('./../../../../utils/request.js');
+const addata = require('./../../../../utils/addata.js')
 Page({
   data: {
     goodsdata: {},
@@ -10,7 +11,9 @@ Page({
     num_iids: null,
     url: null,
     coupondata:{},
-    display:true
+    display:true,
+    moban: {},
+    banneradlist: {}
   },
 
   onLoad: function (options) {
@@ -23,6 +26,16 @@ Page({
       url: url,
       display:display
     })
+
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist
+    })
+
+
+
     this.goodsdata(num_iids) //查询商品详情和优惠券放
     this.miniappurl(url) //获取淘口令
     this.whethercollection(num_iids) //查询用户是否有收藏

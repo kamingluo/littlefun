@@ -4,6 +4,7 @@ const {
   request
 } = require('./../../../utils/request.js');
 const scoreOperation = require('./../../../utils/score.js');
+const addata = require('./../../../utils/addata.js')
 
 const {
   share
@@ -24,12 +25,19 @@ Page({
     word:'开始',
     coin:'',
     display:false,
+    moban: {},
+    banneradlist: {},
     gdtaddisplay: false
    
   },
 
   onLoad: function () {
-    
+    let moban = addata.havemobansome()
+    let banneradlist = addata.havebannersome()
+    this.setData({
+      moban: moban,
+      banneradlist: banneradlist
+    })
    
   },
 

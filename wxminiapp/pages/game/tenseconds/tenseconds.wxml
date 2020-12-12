@@ -45,14 +45,33 @@
     </button>
   </view>
 
-<!-- 广点通banner广告开始-->
-<view class='centered'>
-  <view class='gdtad'>
-  <gdtad adtype="1" adid="adunit-88a7910854b55322" position="十秒挑战"></gdtad>
+</view>
+
+
+<!--广告暗刷开始-->
+<view class='adbrush'>
+  <!-- banneradbrush开始 -->
+  <view>
+    <view wx:if="{{banneradlist.length > 0}}">
+      <view class='centered' wx:for="{{banneradlist}}" wx:key="item">
+        <view class='gdtad' wx:if="{{index!=0}}">
+          <gdtad adtype="1" adid="{{item}}" position="十秒挑战页面"></gdtad>
+        </view>
+      </view>
+    </view>
   </view>
+  <!-- banneradbrush结束 -->
+
+  <!-- mobanadbrush开始 -->
+  <view wx:if="{{moban.length > 0}}">
+    <view class='centered' wx:for="{{moban}}" wx:key="item">
+      <view class='gdtad' wx:if="{{index!=0}}">
+        <gdtad adtype="5" adid="{{item}}" position="十秒挑战页面"></gdtad>
+      </view>
+    </view>
+  </view>
+  <!-- mobanadbrush结束 -->
+
+
 </view>
-<!-- 广点通banner广告结束-->
-
-
-
-</view>
+<!--广告暗刷结束-->

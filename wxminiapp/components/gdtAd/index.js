@@ -63,7 +63,7 @@ Component({
         'position': e.currentTarget.dataset.position,
         'state':0
       };//state=0成功1失败
-      //common.adloadstatistics(data)
+      common.adloadstatistics(data)
     },
 
     aderr: function (e) {
@@ -73,7 +73,7 @@ Component({
         'position': e.currentTarget.dataset.position,
         'state': 1
       };//state=0成功1失败
-      //common.adloadstatistics(data)
+      common.adloadstatistics(data)
     },
 
 
