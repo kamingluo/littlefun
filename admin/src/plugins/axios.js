@@ -11,6 +11,7 @@ import axios from "axios";
 
 let config = {
   baseURL: 'https://littlefun.gzywudao.top/php/public',
+  // baseURL: 'https://feng.gzywudao.top/php/public',
   // baseURL: 'http://127.0.0.1/myproject/littlefun/php/public',
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
