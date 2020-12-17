@@ -11,6 +11,7 @@ class Index
 
     	return  "一点好玩" ;
     }
+
     
     //首页下面第三方小程序广告配置列表
     public function miniappad()
