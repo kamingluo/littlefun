@@ -49,8 +49,10 @@ class Adstatistics
     $loadmoban=db('gdt_ad_load')-> where('adtype',5)-> where('state',0)-> where('channel',$channel)->whereTime('create_time', 'today')->count();//今天加载模板广告成功数
     $clickmoban=db('click_gdt_ad')-> where('adtype',5)-> where('channel',$channel)->whereTime('create_time', 'today')->group("user_id")->count();//今天点击模板去重广告数
     $clickbanner=db('click_gdt_ad')-> where('adtype',1)-> where('channel',$channel)->whereTime('create_time', 'today')->group("user_id")->count();//今天点击banner去重广告数
-    $bannerproportion=round($loadbanner/$allloadbanner*100,2)."％";//加载banner广告成功率
-    $mobanproportion=round($loadmoban/$allloadmoban*100,2)."％";//加载模板广告成功率
+    // $bannerproportion=round($loadbanner/$allloadbanner*100,2)."％";//加载banner广告成功率
+    // $mobanproportion=round($loadmoban/$allloadmoban*100,2)."％";//加载模板广告成功率
+    $bannerproportion=0;//加载banner广告成功率
+    $mobanproportion=0;//加载模板广告成功率
     $data = ['加载banner广告数' =>$allloadbanner,'加载模版广告数'=>$allloadmoban,'banner广告加载成功数'=>$loadbanner,'模板广告加载成功数'=>$loadmoban,'点击模板广告数(去重)'=>$clickmoban,'点击banner广告数(去重)'=>$clickbanner,'banner广告加载成功率'=>$bannerproportion,'模板广告加载成功率'=>$mobanproportion];
     $state=['state'   => '200','message'  => "广告总数统计" ];
     $resdata=array_merge($state,array('data'=>$data));

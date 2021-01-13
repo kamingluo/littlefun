@@ -10,7 +10,7 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  baseURL: 'https://littlefun.gzywudao.top/php/public',
+  baseURL: 'https://one.gzywudao.top/',
   // baseURL: 'https://feng.gzywudao.top/php/public',
   // baseURL: 'http://127.0.0.1/myproject/littlefun/php/public',
   // baseURL: process.env.baseURL || process.env.apiUrl || ""

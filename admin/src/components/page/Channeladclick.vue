@@ -62,7 +62,7 @@
 
       <el-col :span="16">
         <el-row :gutter="20" class="mgb20">
-          <el-col :span="8">
+          <!-- <el-col :span="8">
             <el-card shadow="hover" :body-style="{ padding: '0px' }">
               <div class="grid-content grid-con-1">
                 <i class="el-icon-lx-people grid-con-icon"></i>
@@ -117,7 +117,7 @@
                 </div>
               </div>
             </el-card>
-          </el-col>
+          </el-col> -->
 
           <el-col :span="8">
             <el-card shadow="hover" :body-style="{ padding: '0px' }">

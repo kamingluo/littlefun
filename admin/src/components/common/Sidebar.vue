@@ -80,11 +80,11 @@ export default {
           index: "clickaddata",
           title: "点击广告列表",
         },
-        {
-          icon: "el-icon-lx-cascades",
-          index: "loadaddata",
-          title: "加载广告列表",
-        },
+        // {
+        //   icon: "el-icon-lx-cascades",
+        //   index: "loadaddata",
+        //   title: "加载广告列表",
+        // },
         {
           icon: "el-icon-lx-cascades",
           index: "daycoins",
