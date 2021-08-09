@@ -1,111 +1,121 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.14.1",
-	"appid": "wxc335c3cf09a7a39c",
-	"projectname": "littlefun",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": 0,
-					"name": "分享进入",
-					"pathName": "pages/index/index",
-					"query": "channel=6666&master_id=18001",
-					"scene": 1047
-				},
-				{
-					"id": 1,
-					"name": "我的页面",
-					"pathName": "pages/my/my",
-					"query": "",
-					"scene": 1011
-				},
-				{
-					"id": 2,
-					"name": "测试页面",
-					"pathName": "pages/test/test",
-					"query": "",
-					"scene": 1001
-				},
-				{
-					"id": 3,
-					"name": "任务页面",
-					"pathName": "pages/task/task",
-					"query": "channel=1001",
-					"scene": 1001
-				},
-				{
-					"id": 4,
-					"name": "兑换页面",
-					"pathName": "pages/exchange/exchange",
-					"query": "",
-					"scene": 1011
-				},
-				{
-					"id": 5,
-					"name": "我的二维码",
-					"pathName": "pages/my/qrcode/qrcode",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "我的好友",
-					"pathName": "pages/friends/friends",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.14.1",
+  "appid": "wxc335c3cf09a7a39c",
+  "projectname": "littlefun",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "分享进入",
+          "pathName": "pages/index/index",
+          "query": "channel=6666&master_id=18001",
+          "scene": 1047
+        },
+        {
+          "id": 1,
+          "name": "我的页面",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": 1011
+        },
+        {
+          "id": 2,
+          "name": "测试页面",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": 1001
+        },
+        {
+          "id": 3,
+          "name": "任务页面",
+          "pathName": "pages/task/task",
+          "query": "channel=1001",
+          "scene": 1001
+        },
+        {
+          "id": 4,
+          "name": "兑换页面",
+          "pathName": "pages/exchange/exchange",
+          "query": "",
+          "scene": 1011
+        },
+        {
+          "id": 5,
+          "name": "我的二维码",
+          "pathName": "pages/my/qrcode/qrcode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "我的好友",
+          "pathName": "pages/friends/friends",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "name=1",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

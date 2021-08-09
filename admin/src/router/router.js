@@ -4,7 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',//正常模式
+  mode:'hash',//放入thinkphp环境
   base: process.env.BASE_URL,
   routes: [
     {

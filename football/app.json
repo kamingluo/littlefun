@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/record/record",
+    "pages/userrecord/userrecord",
+    "pages/statistics/statistics"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "数据查看",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#d0d0d0",
+    "selectedColor": "#0066FF",
+    "backgroundColor": "#ffffff",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/config/index.png",
+        "selectedIconPath": "images/config/sindex.png"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "记录",
+        "iconPath": "images/config/coupon.png",
+        "selectedIconPath": "images/config/scoupon.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "images/config/task.png",
+        "selectedIconPath": "images/config/stask.png"
+      }
+    ]
+  }
+}
