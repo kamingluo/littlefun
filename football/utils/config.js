@@ -5,4 +5,31 @@ module.exports = {
   cversion: 1, //版本号
   appid: 'wx0e060ad90f7f41c4', //小程序appid
   appname: "数据查看", //小程序名称
+  status:[
+    {
+      state:0,
+      name:'--'
+    },
+    {
+      state:1,
+      name:'赢'
+    },
+    {
+      state:2,
+      name:'赢半'
+    },
+    {
+      state:3,
+      name:'和'
+    },
+    {
+      state:4,
+      name:'输半'
+    },
+    {
+      state:5,
+      name:'输'
+    },
+
+  ]
 }
