@@ -97,6 +97,16 @@ export default {
         },
         {
           icon: "el-icon-lx-cascades",
+          index: "index",
+          title: "首页",
+        },
+        {
+          icon: "el-icon-lx-cascades",
+          index: "kaming",
+          title: "kaming",
+        },
+        {
+          icon: "el-icon-lx-cascades",
           index: "examine",
           title: "用户兑换列表",
         },

@@ -62,6 +62,16 @@ export default new Router({
           meta: { title: '单页推广配置' }
         },
         {
+          path: '/index',
+          component: resolve => require(['../components/page/Index.vue'], resolve),
+          meta: { title: '首页' }
+        },
+        {
+          path: '/kaming',
+          component: resolve => require(['../components/page/Kaming.vue'], resolve),
+          meta: { title: 'kaming' }
+        },
+        {
           path: '/miniappad',
           component: resolve => require(['../components/page/MiniappAd.vue'], resolve),
           meta: { title: '首页miniapp配置' }
