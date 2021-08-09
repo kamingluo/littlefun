@@ -2,6 +2,7 @@
 namespace app\football\controller;
 use think\Db;
 use think\Config;
+use think\Request;
 
 class User
 {

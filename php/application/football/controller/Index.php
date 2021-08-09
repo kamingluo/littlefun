@@ -1,7 +1,8 @@
 <?php
 namespace app\football\controller;
 use think\Db;
-use think\Config;
+use think\Config;、
+use think\Request;
 
 class Index
 {
