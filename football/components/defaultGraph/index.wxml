@@ -1,0 +1,8 @@
+ <view class='default'>
+ 	<view>
+ 		<image src='http://littlebox.luojiaming.vip/default.png'></image>
+ 	</view>
+ 	<view>
+ 		<text>{{tips}}</text>
+ 	</view>
+ </view>
