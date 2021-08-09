@@ -1,0 +1,14 @@
+.cu-form-group{
+  margin-top: 10rpx;
+}
+
+.btn-area{
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+.btn-area button{
+  width: 400rpx;
+  height: 90rpx;
+  background-color: #0081ff;
+  color: white;
+}

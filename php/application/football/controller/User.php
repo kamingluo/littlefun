@@ -6,7 +6,7 @@ use think\Config;
 class User
 {
 
-    public function usersdata()
+    public function usersdata(Request $request)
     {
         $userdata =db('user')->order('id desc')-> select();//查询信息
         $state=['state'   => '200','message'  => "用户列表" ];

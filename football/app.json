@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/record/record",
     "pages/userrecord/userrecord",
-    "pages/statistics/statistics"
+    "pages/statistics/statistics",
+    "pages/add/add"
 
   ],
   "window": {
@@ -33,7 +34,7 @@
         "selectedIconPath": "images/config/scoupon.png"
       },
       {
-        "pagePath": "pages/statistics/statistics",
+        "pagePath": "pages/add/add",
         "text": "统计",
         "iconPath": "images/config/task.png",
         "selectedIconPath": "images/config/stask.png"

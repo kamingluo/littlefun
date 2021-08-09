@@ -17,6 +17,7 @@ Page({
       method: 'GET',
       success: res => {
         console.log('博主信息', res);
+        wx.setStorageSync('userdata', res.userdata)
         this.setData({
           userdata: res.userdata,
         })

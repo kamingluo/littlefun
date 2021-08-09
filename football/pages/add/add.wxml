@@ -1,0 +1,65 @@
+<cu-custom bgColor="bg-gradual-blue">
+	<view slot="content">新增数据</view>
+</cu-custom>
+
+
+<form>
+
+
+	<view class="cu-form-group">
+		<view class="title">日期选择</view>
+		<picker mode="date" value="{{date}}" start="2021-08-01" end="2025-09-01" bindchange="DateChange">
+			<view class="picker">
+				{{date}}
+			</view>
+		</picker>
+	</view>
+
+
+
+
+	<view class="cu-form-group margin-top">
+		<view class="title">选择博主</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{userdata}}" range-key='name'>
+			<view class="picker">
+				{{index?userdata[index].name:'请选择'}}
+			</view>
+		</picker>
+	</view>
+
+
+	<view class="cu-form-group margin-top">
+		<view class="title">结果</view>
+		<picker bindchange="PickerState" value="{{sindex}}" range="{{status}}" range-key='name'>
+			<view class="picker">
+				{{sindex?status[sindex].name:'请选择'}}
+			</view>
+		</picker>
+	</view>
+
+
+	<view class="cu-form-group">
+	<view class="title">倍率</view>
+	<input maxlength="5"  placeholder="请输入倍率" bindinput="odds" value="{{odds}}"></input>
+</view>
+
+
+<view class="cu-form-group">
+	<view class="title">金额</view>
+	<input maxlength="5"  placeholder="请输入倍率" bindinput="money" value="{{money}}"></input>
+</view>
+
+
+
+
+
+
+
+</form>
+
+
+
+
+<view class="btn-area centered">
+	<button bindtap="push">起飞</button>
+</view>

@@ -1234,7 +1234,7 @@ button.icon.lg {
 }
 
 .cu-list+.cu-list {
-	margin-top: 30rpx
+	margin-top: 15rpx
 }
 
 .cu-list>.cu-item {
@@ -1287,7 +1287,7 @@ button.icon.lg {
 
 .cu-list.menu-avatar>.cu-item .content {
 	position: absolute;
-	left: 146rpx;
+	left: 36rpx;
 	width: calc(100% - 96rpx - 60rpx - 120rpx - 20rpx);
 	line-height: 1.6em;
 }

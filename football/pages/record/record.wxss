@@ -1,0 +1,9 @@
+/* pages/record/record.wxss */
+
+.money{
+  margin-left: 50rpx;
+}
+
+.text-kaming{
+  margin-top: 10rpx;
+}

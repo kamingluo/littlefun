@@ -2,7 +2,6 @@ const app = getApp()
 const {
   request
 } = require('./../../utils/request.js');
-const common = require('./../../utils/common.js') //公共函数
 
 let preventShake = 0;
 

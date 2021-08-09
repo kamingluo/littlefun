@@ -1,0 +1,34 @@
+<cu-custom bgColor="bg-gradual-blue">
+	<view slot="content">记录查询</view>
+</cu-custom>
+
+
+
+<view class="cu-list menu-avatar" wx:for="{{recentlist}}" wx:key="item">
+	<view class="cu-item cur">
+		<view class="content">
+			<view>
+				<text class="text-cut">{{item.name}}</text>
+				<view class="cu-tag round bg-orange sm">{{item.odds}}</view>
+			</view>
+			<view class="text-gray text-sm flex text-kaming">
+				<text class="text-cut"> {{item.create_time}}</text>
+				<text class="text-cut money"> 金额:{{item.money}}</text>
+			</view>
+		</view>
+		<view class="action">
+			<view wx:if="{{item.state == 0}}">
+				<view class="text-grey text-s" bindtap="edit">编辑</view>
+			</view>
+			<view wx:else>
+				<view class="text-grey text-s" wx:if="{{item.state == 1}}">赢{{item.profit}}</view>
+				<view class="text-grey text-s" wx:elif="{{item.state == 2}}">赢半{{item.profit}}</view>
+				<view class="text-grey text-s" wx:elif="{{item.state == 3}}">和</view>
+				<view class="text-grey text-s" wx:elif="{{item.state == 4}}">输半{{item.profit}}</view>
+				<view class="text-grey text-s" wx:elif="{{item.state == 5}}">输{{item.profit}}</view>
+				<view class="text-grey text-s" wx:else>未知</view>
+
+			</view>
+		</view>
+	</view>
+</view>
