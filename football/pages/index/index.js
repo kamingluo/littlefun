@@ -4,13 +4,13 @@ const app = getApp()
 const {
   request
 } = require('./../../utils/request.js');
-const baseConfig = require('./../../utils/config.js')//配置文件
+const baseConfig = require('./../../utils/config.js')//配置文件123123
 
 Page({
   data: {
-    userdata:[]
+    userdata: []
   },
- 
+
   onLoad: function () {
     request({
       service: 'user/usersdata',
@@ -26,8 +26,8 @@ Page({
   },
 
   jump: function (e) {
-    let id=e.currentTarget.dataset.data.id;
-    let name=e.currentTarget.dataset.data.name;
+    let id = e.currentTarget.dataset.data.id;
+    let name = e.currentTarget.dataset.data.name;
     wx.navigateTo({
       url: '/pages/userrecord/userrecord?id=' + id + '&name=' + name
     })
