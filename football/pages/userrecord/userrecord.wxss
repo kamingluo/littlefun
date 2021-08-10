@@ -1,1 +1,16 @@
 /* pages/userrecord/userrecord.wxss */
+.addjilu{
+  margin-bottom: 40rpx;
+  margin-top:20rpx;
+}
+.addjilu button{
+  background-color: #0081ff;
+}
+
+.cu-form-group{
+  margin-top: 10rpx;
+}
+
+.money{
+  margin-left: 50rpx;
+}

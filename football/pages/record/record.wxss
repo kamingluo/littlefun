@@ -7,3 +7,7 @@
 .text-kaming{
   margin-top: 10rpx;
 }
+
+.cu-form-group{
+  margin-top: 10rpx;
+}

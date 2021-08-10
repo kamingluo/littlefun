@@ -21,6 +21,13 @@
         {
           "name": "pages/record/record",
           "pathName": "pages/record/record",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/userrecord/userrecord",
+          "pathName": "pages/userrecord/userrecord",
+          "query": "id=11&name=kaming",
           "scene": null
         }
       ]

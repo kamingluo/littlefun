@@ -46,7 +46,7 @@
 
 <view class="cu-form-group">
 	<view class="title">金额</view>
-	<input maxlength="5"  placeholder="请输入倍率" bindinput="money" value="{{money}}"></input>
+	<input maxlength="5"  placeholder="请输入金额" bindinput="money" value="{{money}}"></input>
 </view>
 
 

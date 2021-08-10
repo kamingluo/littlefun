@@ -2,7 +2,7 @@
   <view slot="content">首页</view>
 </cu-custom>
 
-
+<view class="body">
 <view class="cu-list menu-avatar" wx:for="{{userdata}}" wx:key="item">
     <view class="cu-item cur" bindtap="jump"  data-data='{{item}}'>
       <view class="content">
@@ -16,3 +16,4 @@
       </view>
     </view>
   </view>
+</view>

@@ -70,23 +70,23 @@ class Record
         $profit=0;
         $create_time =date('Y-m-d H:i:s',time());//获取当前时间
         if($state != 0){
-            if($state==1){
-                $profit=$money*($odds-1);
-            }
-            elseif($state==2){
-                $profit=$money*($odds-0.5);
-            }
-            elseif($state==4){
-                $profit=$money*0.5;
-                
-            }
-            elseif($state==5){
-                $profit=$money;
-            }
-            else{
-                $profit=0;
-            }
-        }
+          if($state==1){
+              $profit=$money*$odds;
+          }
+          elseif($state==2){
+              $profit=$money*($odds/2);
+          }
+          elseif($state==4){
+              $profit=$money*0.5;
+              
+          }
+          elseif($state==5){
+              $profit=$money;
+          }
+          else{
+              $profit=0;
+          }
+      }
         $updatedata= db('record')->where('id',$id)->update(['user' => $user,'odds' => $odds,'state' => $state,'money' => $money,'profit' => $profit]);
         $state=['state'   => '200','message'  => "更新记录成功" , 'updatedata'=>$updatedata];
         return  $state;

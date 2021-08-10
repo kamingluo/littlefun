@@ -20,13 +20,54 @@
 			<view wx:if="{{item.state == 0}}">
 				<view class="text-grey text-s" bindtap="edit" data-data="{{item}}">编辑</view>
 			</view>
-			<view wx:else>
+			<view wx:else bindtap="edit" data-data="{{item}}">
 				<view class="text-red text-s" wx:if="{{item.state == 1}}">赢{{item.profit}}</view>
 				<view class="text-red text-s" wx:elif="{{item.state == 2}}">赢半{{item.profit}}</view>
 				<view class="text-grey text-s" wx:elif="{{item.state == 3}}">和</view>
 				<view class="text-black text-s" wx:elif="{{item.state == 4}}">输半{{item.profit}}</view>
 				<view class="text-black text-s" wx:elif="{{item.state == 5}}">输{{item.profit}}</view>
 				<view class="text-grey text-s" wx:else>未知</view>
+
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<view class="cu-modal {{editModle?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white justify-end">
+			<view class="content">{{editdata.name}}:{{editdata.odds}}</view>
+			<view class="action" bindtap="hideModal">
+				<text class="cuIcon-close text-red"></text>
+			</view>
+		</view>
+		<view class="padding-xl">
+
+			<view class="cu-form-group">
+				<view class="title">倍率</view>
+				<input maxlength="5" placeholder="请输入倍率" bindinput="odds" value="{{editdata.odds}}"></input>
+			</view>
+			<view class="cu-form-group">
+				<view class="title">金额</view>
+				<input maxlength="5" placeholder="请输入金额" bindinput="money" value="{{editdata.money}}"></input>
+			</view>
+
+			<view class="cu-form-group margin-top">
+		<view class="title">结果</view>
+		<picker bindchange="PickerState" value="{{sindex}}" range="{{status}}" range-key='name'>
+			<view class="picker">
+				{{status[sindex].name}}
+			</view>
+		</picker>
+	</view>
+
+
+		</view>
+		<view class="cu-bar bg-white justify-end">
+			<view class="action">
+				<button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+				<button class="cu-btn bg-green margin-left" bindtap="queryedit">确定</button>
 
 			</view>
 		</view>
