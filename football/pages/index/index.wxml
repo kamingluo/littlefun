@@ -4,7 +4,7 @@
 
 
 <view class="cu-list menu-avatar" wx:for="{{userdata}}" wx:key="item">
-    <view class="cu-item cur">
+    <view class="cu-item cur" bindtap="jump"  data-data='{{item}}'>
       <view class="content">
         <view>
           <text class="text-cut">{{item.name}}</text>

@@ -26,8 +26,10 @@ Page({
   },
 
   jump: function (e) {
+    let id=e.currentTarget.dataset.data.id;
+    let name=e.currentTarget.dataset.data.name;
     wx.navigateTo({
-      url: '/pages/my/exchange_detailed/exchange_detailed'
+      url: '/pages/userrecord/userrecord?id=' + id + '&name=' + name
     })
   },
 })

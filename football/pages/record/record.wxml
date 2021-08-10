@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="bg-gradual-blue" bindtap="havedata">
 	<view slot="content">记录查询</view>
 </cu-custom>
 
@@ -18,14 +18,14 @@
 		</view>
 		<view class="action">
 			<view wx:if="{{item.state == 0}}">
-				<view class="text-grey text-s" bindtap="edit">编辑</view>
+				<view class="text-grey text-s" bindtap="edit" data-data="{{item}}">编辑</view>
 			</view>
 			<view wx:else>
-				<view class="text-grey text-s" wx:if="{{item.state == 1}}">赢{{item.profit}}</view>
-				<view class="text-grey text-s" wx:elif="{{item.state == 2}}">赢半{{item.profit}}</view>
+				<view class="text-red text-s" wx:if="{{item.state == 1}}">赢{{item.profit}}</view>
+				<view class="text-red text-s" wx:elif="{{item.state == 2}}">赢半{{item.profit}}</view>
 				<view class="text-grey text-s" wx:elif="{{item.state == 3}}">和</view>
-				<view class="text-grey text-s" wx:elif="{{item.state == 4}}">输半{{item.profit}}</view>
-				<view class="text-grey text-s" wx:elif="{{item.state == 5}}">输{{item.profit}}</view>
+				<view class="text-black text-s" wx:elif="{{item.state == 4}}">输半{{item.profit}}</view>
+				<view class="text-black text-s" wx:elif="{{item.state == 5}}">输{{item.profit}}</view>
 				<view class="text-grey text-s" wx:else>未知</view>
 
 			</view>

@@ -7,7 +7,8 @@ const common = require('./../../utils/common.js') //公共函数
 Page({
   data: {
     recentlist:[],//记录数据
-
+    editdata:{},//编辑的数据
+    editModle:false,//编辑弹框
   },
 
   onLoad: function (options) {
@@ -28,4 +29,35 @@ Page({
     })
 
   },
+
+  //调起编辑弹框
+  edit:function(e){
+    let data=e.currentTarget.dataset.data;
+    this.setData({
+      editdata: data,
+      editModle:true
+    })
+  },
+
+  //确认修改
+  queryedit:function(){
+    let data=this.data.editdata;
+    request({
+      service: 'record/update',
+      method: 'POST',
+      data: data,
+      success: res => {
+        this.setData({
+          editModle:false,
+        })
+        wx.showToast({
+          title: '更新成功',
+          icon: 'success',
+          duration: 2000,
+        })
+      }
+    })
+
+  }
+
 })
