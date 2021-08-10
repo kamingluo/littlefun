@@ -5,7 +5,6 @@
     "pages/userrecord/userrecord",
     "pages/statistics/statistics",
     "pages/add/add"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,7 +18,7 @@
     "color": "#d0d0d0",
     "selectedColor": "#0066FF",
     "backgroundColor": "#ffffff",
-    "borderStyle":"white",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -35,7 +34,7 @@
       },
       {
         "pagePath": "pages/add/add",
-        "text": "统计",
+        "text": "新增",
         "iconPath": "images/config/task.png",
         "selectedIconPath": "images/config/stask.png"
       }

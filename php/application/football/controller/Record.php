@@ -19,7 +19,7 @@ class Record
 
     public function recentlist(Request $request)
     {
-        //$recentlist =db('record')->order('id desc')->limit(0,30)->select();//查询信息
+        //$recentlist =db('record')->order('id desc')->limit(0,30)->select();//查询信息，更新信息
         $sql="select a.name,b.* from user a,record b where a.id=b.user ORDER BY b.id DESC LIMIT 0,30;";
         $recentlist = Db::query($sql); //拿到数据
         $state=['state'   => '200','message'  => "记录列表近30条记录" ];
