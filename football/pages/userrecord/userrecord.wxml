@@ -5,6 +5,27 @@
 
 
 
+<view class="grid col-3 padding-sm">
+  <view class="padding-sm">
+
+    <view class="bg-blue padding radius text-center shadow-blur">
+      <view class="text-lg">总投注</view>
+      <view class="margin-top-sm text-Abc">{{investment}}</view>
+    </view>
+
+	<view class="bg-red padding radius text-center shadow-blur">
+      <view class="text-lg">赢</view>
+      <view class="margin-top-sm text-Abc">{{win}}</view>
+    </view>
+
+	<view class="bg-black padding radius text-center shadow-blur">
+      <view class="text-lg">输</view>
+      <view class="margin-top-sm text-Abc">{{transport}}</view>
+    </view>
+
+  </view>
+</view>
+
 
 <view class="addjilu">
 

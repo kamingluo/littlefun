@@ -5,7 +5,7 @@
 
 
 <view class="cu-list menu-avatar" wx:for="{{recentlist}}" wx:key="item">
-	<view class="cu-item cur">
+	<view class="cu-item cur" bindtap="jump" data-data="{{item}}">
 		<view class="content">
 			<view>
 				<text class="text-cut">{{item.name}}</text>
@@ -18,9 +18,9 @@
 		</view>
 		<view class="action">
 			<view wx:if="{{item.state == 0}}">
-				<view class="text-grey text-s" bindtap="edit" data-data="{{item}}">编辑</view>
+				<view class="text-grey text-s" catchtap="edit" data-data="{{item}}">编辑</view>
 			</view>
-			<view wx:else bindtap="edit" data-data="{{item}}">
+			<view wx:else catchtap="edit" data-data="{{item}}">
 				<view class="text-red text-s" wx:if="{{item.state == 1}}">赢{{item.profit}}</view>
 				<view class="text-red text-s" wx:elif="{{item.state == 2}}">赢半{{item.profit}}</view>
 				<view class="text-grey text-s" wx:elif="{{item.state == 3}}">和</view>

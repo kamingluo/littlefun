@@ -13,6 +13,9 @@ Page({
     name:'博主名称',
     id:null,
     listdata:[],
+    investment:null,//总投注
+    transport:null,//输
+    win:null,//赢
     editdata:{},//编辑的数据
     editModle:false,//编辑弹框
     status:[],//结果
@@ -57,7 +60,10 @@ Page({
       },
       success: res => {
         this.setData({
-          listdata:res.data
+          listdata:res.data,
+          investment:res.investment,//总投注
+          transport:res.transport,//输
+          win:res.win,//赢
         })
       }
     })

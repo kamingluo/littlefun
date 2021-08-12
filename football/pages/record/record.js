@@ -36,6 +36,15 @@ Page({
 
   },
 
+  //跳转到博主详情
+  jump: function (e) {
+    let id = e.currentTarget.dataset.data.user;
+    let name = e.currentTarget.dataset.data.name;
+    wx.navigateTo({
+      url: '/pages/userrecord/userrecord?id=' + id + '&name=' + name
+    })
+  },
+
   //调起编辑弹框
   edit:function(e){
     let data=e.currentTarget.dataset.data;

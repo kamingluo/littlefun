@@ -10,8 +10,11 @@ class Record
     public function recorddata(Request $request)
     {
         $user_id=$request->param("user_id");
+        $investment=db('record')->where('user',$user_id)->sum('money');//总投资
+        $transport=db('record')->where('user',$user_id)->where('state = 4  OR  state = 5')->sum('profit');//输
+        $win=db('record')->where('user',$user_id)->where('state = 1  OR  state = 2')->sum('profit');//赢
         $data =db('record') ->where('user',$user_id)->order('id desc')->limit(0,30)->select();//查询信息
-        $state=['state'   => '200','message'  => "该博主近30条记录" ];
+        $state=['state'=> '200','message'  => "该博主近30条记录",'investment' =>$investment,'transport' => $transport,'win' => $win ];
         $resdata=array_merge($state,array('data'=>$data));
         return  $resdata;
     }
