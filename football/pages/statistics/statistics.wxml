@@ -1,2 +1,70 @@
-<!--pages/statistics/statistics.wxml-->
-<text>pages/statistics/statistics.wxml</text>
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">统计</view>
+</cu-custom>
+
+
+
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect"
+      data-id="{{index}}">
+      {{index==0?"今天":index==1?"这两天":index==2?"最近7天":index==3?"全部":"其他"}}
+    </view>
+  </view>
+</scroll-view>
+
+
+<!-- <view class="padding bg-white">
+    <view class="flex flex-wrap">
+      <view class="basis-lg bg-grey margin-xs padding-sm radius">投注:{{data.investment}}</view>
+      <view class="basis-lg bg-red margin-xs padding-sm radius">赢:{{data.investment}}</view>
+      <view class="basis-lg bg-black margin-xs padding-sm radius">输:{{data.transport}}</view>
+    </view>
+  </view> -->
+
+
+<view class="kaming-list">
+  <view class="grid col-3">
+    <view class="padding-xs">
+      <view class="bg-blue padding radius text-center shadow-blur">
+        <view class="text-lg">总投注</view>
+        <view class="margin-top-sm text-Abc">{{data.investment}}</view>
+      </view>
+    </view>
+    <view class="padding-xs">
+      <view class="bg-red padding radius text-center shadow-blur">
+        <view class="text-lg">赢</view>
+        <view class="margin-top-sm text-Abc">{{data.win}}</view>
+      </view>
+    </view>
+    <view class="padding-xs">
+      <view class="bg-black padding radius text-center shadow-blur">
+        <view class="text-lg">输</view>
+        <view class="margin-top-sm text-Abc">{{data.transport}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="grid col-3 ">
+    <view class="padding-xs">
+      <view class="bg-blue padding radius text-center shadow-blur">
+        <view class="text-lg">总投注</view>
+        <view class="margin-top-sm text-Abc">{{data.investmentnum}}</view>
+      </view>
+    </view>
+    <view class="padding-xs">
+      <view class="bg-red padding radius text-center shadow-blur">
+        <view class="text-lg">赢</view>
+        <view class="margin-top-sm text-Abc">{{data.winnum}}</view>
+      </view>
+    </view>
+    <view class="padding-xs">
+      <view class="bg-black padding radius text-center shadow-blur">
+        <view class="text-lg">输</view>
+        <view class="margin-top-sm text-Abc">{{data.transportnum}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

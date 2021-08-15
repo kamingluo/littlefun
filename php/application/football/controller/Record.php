@@ -14,7 +14,10 @@ class Record
         $transport=db('record')->where('user',$user_id)->where('state = 4  OR  state = 5')->sum('profit');//输
         $win=db('record')->where('user',$user_id)->where('state = 1  OR  state = 2')->sum('profit');//赢
         $data =db('record') ->where('user',$user_id)->order('id desc')->limit(0,30)->select();//查询信息
-        $state=['state'=> '200','message'  => "该博主近30条记录",'investment' =>$investment,'transport' => $transport,'win' => $win ];
+        $investmentnum=db('record')->where('user',$user_id)->count();//总次数
+        $transportnum=db('record')->where('user',$user_id)->where('state = 4  OR  state = 5')->count();//输的次数
+        $winnum=db('record')->where('user',$user_id)->where('state = 1  OR  state = 2')->count();//赢的次数
+        $state=['state'=> '200','message'  => "该博主近30条记录",'investment' =>$investment,'investmentnum' =>$investmentnum,'transport' => $transport,'win' => $win,'transportnum' => $transportnum,'winnum' => $winnum ];
         $resdata=array_merge($state,array('data'=>$data));
         return  $resdata;
     }
@@ -36,6 +39,7 @@ class Record
         $odds=$request->param("odds");
         $state=$request->param("state");
         $money=$request->param("money");
+        $remarks=$request->param("remarks");
         $profit=0;
         // $create_time =date('Y-m-d H:i:s',time());//获取当前时间
         $create_time =$request->param("date");//获取当前时间
@@ -57,7 +61,7 @@ class Record
                 $profit=0;
             }
         }
-        $adres = ['id'=>'','user' =>$user,'odds' =>$odds,'state' =>$state,'money' =>$money,'profit' =>$profit,'create_time' =>$create_time];
+        $adres = ['id'=>'','user' =>$user,'odds' =>$odds,'state' =>$state,'money' =>$money,'profit' =>$profit,'remarks' =>$remarks,'create_time' =>$create_time];
         $addata=db('record')->insert($adres);
         $state=['state'   => '200','message'  => "新增记录成功" , 'addata'=>$addata];
         return  $state;
@@ -70,6 +74,7 @@ class Record
         $odds=$request->param("odds");
         $state=$request->param("state");
         $money=$request->param("money");
+        $remarks=$request->param("remarks");
         $profit=0;
         $create_time =date('Y-m-d H:i:s',time());//获取当前时间
         if($state != 0){
@@ -90,7 +95,7 @@ class Record
               $profit=0;
           }
       }
-        $updatedata= db('record')->where('id',$id)->update(['user' => $user,'odds' => $odds,'state' => $state,'money' => $money,'profit' => $profit]);
+        $updatedata= db('record')->where('id',$id)->update(['user' => $user,'odds' => $odds,'state' => $state,'money' => $money,'remarks' =>$remarks,'profit' => $profit]);
         $state=['state'   => '200','message'  => "更新记录成功" , 'updatedata'=>$updatedata];
         return  $state;
     }

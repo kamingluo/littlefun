@@ -16,6 +16,9 @@ Page({
     investment:null,//总投注
     transport:null,//输
     win:null,//赢
+    investmentnum:null,//总投注
+    transportnum:null,//输
+    winnum:null,//赢
     editdata:{},//编辑的数据
     editModle:false,//编辑弹框
     status:[],//结果
@@ -29,6 +32,7 @@ Page({
       odds:null,//倍率
       money:50,//金额
       state:0,//结果
+      remarks:null,//备注
     }
 
   },
@@ -64,6 +68,9 @@ Page({
           investment:res.investment,//总投注
           transport:res.transport,//输
           win:res.win,//赢
+          investmentnum:res.investmentnum,//总投注
+          transportnum:res.transportnum,//输
+          winnum:res.winnum,//赢
         })
       }
     })
@@ -163,6 +170,17 @@ Page({
         newsindex: value
       })
     },
+
+
+      //备注
+
+  remarks:function(e){
+    let adddata=this.data.adddata;
+    adddata.remarks=e.detail.value
+    this.setData({
+      adddata: adddata,
+    })
+  },
   
   //倍率
     newodds:function(e){

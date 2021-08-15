@@ -1,19 +1,23 @@
-<cu-custom bgColor="bg-gradual-blue" >
+<cu-custom bgColor="bg-gradual-blue">
   <view slot="content">首页</view>
 </cu-custom>
 
 <view class="body">
-<view class="cu-list menu-avatar" wx:for="{{userdata}}" wx:key="item">
-    <view class="cu-item cur" bindtap="jump"  data-data='{{item}}'>
+  <view class="cu-list menu-avatar" wx:for="{{userdata}}" wx:key="item">
+    <view class="cu-item cur" bindtap="jump" data-data='{{item}}'>
       <view class="content">
         <view>
           <text class="text-cut">{{item.name}}</text>
-          <view class="cu-tag round bg-orange sm">{{item.id}}</view>
+          <!-- <view class="cu-tag round bg-orange sm">{{item.id}}</view> -->
         </view>
-        <view class="text-gray text-sm flex">
+        <view class="text-gray text-sm flex  text-kaming">
           <text class="text-cut"> {{item.article}}</text>
         </view>
       </view>
+
+      <view class="action">
+          <view class="cu-tag round bg-orange ss">{{item.count}}</view>
+        </view>
     </view>
   </view>
 </view>

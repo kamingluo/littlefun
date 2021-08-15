@@ -1,32 +1,54 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content" bindtap="havedata">{{name}}</view>
+	<view slot="backText">返回</view>
+	<view slot="content" bindtap="havedata">{{name}}</view>
 </cu-custom>
 
 
 
-<view class="grid col-3 padding-sm">
-  <view class="padding-sm">
-    <view class="bg-blue padding radius text-center shadow-blur">
-      <view class="text-lg">总投注</view>
-      <view class="margin-top-sm text-Abc">{{investment}}</view>
-    </view>
-  </view>
-    <view class="padding-sm">
-	<view class="bg-red padding radius text-center shadow-blur">
-      <view class="text-lg">赢</view>
-      <view class="margin-top-sm text-Abc">{{win}}</view>
-    </view>
-    </view>
-	  <view class="padding-sm">
-	<view class="bg-black padding radius text-center shadow-blur">
-      <view class="text-lg">输</view>
-      <view class="margin-top-sm text-Abc">{{transport}}</view>
-    </view>
-    </view>
+<view class="grid col-3">
+	<view class="padding-xs">
+		<view class="bg-blue padding radius text-center shadow-blur">
+			<view class="text-lg">总投注</view>
+			<view class="margin-top-sm text-Abc">{{investment}}</view>
+		</view>
+	</view>
+	<view class="padding-xs">
+		<view class="bg-red padding radius text-center shadow-blur">
+			<view class="text-lg">赢</view>
+			<view class="margin-top-sm text-Abc">{{win}}</view>
+		</view>
+	</view>
+	<view class="padding-xs">
+		<view class="bg-black padding radius text-center shadow-blur">
+			<view class="text-lg">输</view>
+			<view class="margin-top-sm text-Abc">{{transport}}</view>
+		</view>
+	</view>
 </view>
-<view class="addjilu">
 
+<view class="grid col-3 ">
+	<view class="padding-xs">
+		<view class="bg-blue padding radius text-center shadow-blur">
+			<view class="text-lg">总投注</view>
+			<view class="margin-top-sm text-Abc">{{investmentnum}}</view>
+		</view>
+	</view>
+	<view class="padding-xs">
+		<view class="bg-red padding radius text-center shadow-blur">
+			<view class="text-lg">赢</view>
+			<view class="margin-top-sm text-Abc">{{winnum}}</view>
+		</view>
+	</view>
+	<view class="padding-xs">
+		<view class="bg-black padding radius text-center shadow-blur">
+			<view class="text-lg">输</view>
+			<view class="margin-top-sm text-Abc">{{transportnum}}</view>
+		</view>
+	</view>
+</view>
+
+
+<view class="addjilu">
 	<button bindtap="add">新增记录</button>
 </view>
 
@@ -43,12 +65,15 @@
 				<text class="text-cut"> {{item.create_time}}</text>
 				<text class="text-cut money"> 金额:{{item.money}}</text>
 			</view>
+			<view class="text-gray text-sm flex text-kaming">
+				<text class="text-cut">备注:{{item.remarks?item.remarks:"暂无备注"}}</text>
+			</view>
 		</view>
 		<view class="action">
 			<view wx:if="{{item.state == 0}}">
 				<view class="text-grey text-s" bindtap="edit" data-data="{{item}}">编辑</view>
 			</view>
-			<view wx:else  bindtap="edit" data-data="{{item}}">
+			<view wx:else bindtap="edit" data-data="{{item}}">
 				<view class="text-red text-s" wx:if="{{item.state == 1}}">赢{{item.profit}}</view>
 				<view class="text-red text-s" wx:elif="{{item.state == 2}}">赢半{{item.profit}}</view>
 				<view class="text-grey text-s" wx:elif="{{item.state == 3}}">和</view>
@@ -82,13 +107,19 @@
 			</view>
 
 			<view class="cu-form-group margin-top">
-		<view class="title">结果</view>
-		<picker bindchange="PickerState" value="{{sindex}}" range="{{status}}" range-key='name'>
-			<view class="picker">
-				{{status[sindex].name}}
+				<view class="title">结果</view>
+				<picker bindchange="PickerState" value="{{sindex}}" range="{{status}}" range-key='name'>
+					<view class="picker">
+						{{status[sindex].name}}
+					</view>
+				</picker>
 			</view>
-		</picker>
-	</view>
+
+
+			<view class="cu-form-group">
+				<view class="title">备注</view>
+				<input maxlength="20" placeholder="请输入备注" bindinput="remarks" value="{{editdata.remarks}}"></input>
+			</view>
 
 
 		</view>
@@ -117,13 +148,13 @@
 		<view class="padding-xl">
 
 			<view class="cu-form-group">
-		<view class="title">日期选择</view>
-		<picker mode="date" value="{{adddata.date}}" start="2021-08-01" end="2025-09-01" bindchange="DateChange">
-			<view class="picker">
-				{{adddata.date}}
+				<view class="title">日期选择</view>
+				<picker mode="date" value="{{adddata.date}}" start="2021-08-01" end="2025-09-01" bindchange="DateChange">
+					<view class="picker">
+						{{adddata.date}}
+					</view>
+				</picker>
 			</view>
-		</picker>
-	</view>
 
 			<view class="cu-form-group">
 				<view class="title">倍率</view>
@@ -135,13 +166,13 @@
 			</view>
 
 			<view class="cu-form-group margin-top">
-		<view class="title">结果</view>
-		<picker bindchange="newPickerState" value="{{newsindex}}" range="{{status}}" range-key='name'>
-			<view class="picker">
-				{{status[newsindex].name}}
+				<view class="title">结果</view>
+				<picker bindchange="newPickerState" value="{{newsindex}}" range="{{status}}" range-key='name'>
+					<view class="picker">
+						{{status[newsindex].name}}
+					</view>
+				</picker>
 			</view>
-		</picker>
-	</view>
 
 
 		</view>

@@ -37,6 +37,12 @@
         "text": "新增",
         "iconPath": "images/config/task.png",
         "selectedIconPath": "images/config/stask.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "images/config/task.png",
+        "selectedIconPath": "images/config/stask.png"
       }
     ]
   }

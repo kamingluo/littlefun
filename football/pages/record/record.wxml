@@ -15,6 +15,9 @@
 				<text class="text-cut"> {{item.create_time}}</text>
 				<text class="text-cut money"> 金额:{{item.money}}</text>
 			</view>
+			<view class="text-gray text-sm flex text-kaming">
+				<text class="text-cut">备注:{{item.remarks?item.remarks:"暂无备注"}}</text>
+			</view>
 		</view>
 		<view class="action">
 			<view wx:if="{{item.state == 0}}">
@@ -54,13 +57,18 @@
 			</view>
 
 			<view class="cu-form-group margin-top">
-		<view class="title">结果</view>
-		<picker bindchange="PickerState" value="{{sindex}}" range="{{status}}" range-key='name'>
-			<view class="picker">
-				{{status[sindex].name}}
+				<view class="title">结果</view>
+				<picker bindchange="PickerState" value="{{sindex}}" range="{{status}}" range-key='name'>
+					<view class="picker">
+						{{status[sindex].name}}
+					</view>
+				</picker>
 			</view>
-		</picker>
-	</view>
+
+			<view class="cu-form-group">
+				<view class="title">备注</view>
+				<input maxlength="20" placeholder="请输入备注" bindinput="remarks" value="{{editdata.remarks}}"></input>
+			</view>
 
 
 		</view>

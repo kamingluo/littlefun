@@ -76,6 +76,16 @@ Page({
     })
   },
 
+  //备注
+
+  remarks:function(e){
+    let editdata=this.data.editdata;
+    editdata.remarks=e.detail.value
+    this.setData({
+      editdata: editdata,
+    })
+  },
+
 //倍率
   odds:function(e){
     let editdata=this.data.editdata;

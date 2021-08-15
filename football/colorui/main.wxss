@@ -1270,7 +1270,7 @@ button.icon.lg {
 	position: relative;
 	display: flex;
 	padding-right: 10rpx;
-	height: 140rpx;
+	height: 150rpx;
 	background-color: var(--white);
 	justify-content: flex-end;
 	align-items: center
@@ -1289,7 +1289,7 @@ button.icon.lg {
 	position: absolute;
 	left: 36rpx;
 	width: calc(100% - 96rpx - 60rpx - 120rpx - 20rpx);
-	line-height: 1.6em;
+	line-height: 1.7em;
 }
 
 .cu-list.menu-avatar>.cu-item .content.flex-sub {

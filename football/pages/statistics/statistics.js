@@ -1,10 +1,18 @@
-// pages/statistics/statistics.js
+const app = getApp()
+const {
+  request
+} = require('./../../utils/request.js');
+const baseConfig = require('./../../utils/config.js')//配置文件
+const common = require('./../../utils/common.js') //公共函数
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    TabCur: 0,
+    scrollLeft:0,
+    data:{}
 
   },
 
@@ -12,55 +20,46 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(this.data.TabCur)
+    this.havedata()
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  tabSelect(e) {
+    console.log(e.currentTarget.dataset.id)
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id-1)*60
+    })
+    this.havedata()
+  },
+
+  havedata:function(){
+    let day=this.data.TabCur;
+    let service=null;
+    if(day==3){
+      service='Statistics/all'
+    }
+    else if(day==2){
+      service='Statistics/timeslot?day=' + 7
+
+    }
+    else{
+      service='Statistics/timeslot?day=' + day
+    }
+    request({
+      service:service,
+      method: 'GET',
+      success: res => {
+        console.log('博主信息', res);
+        this.setData({
+          data: res.data,
+        })
+      }
+    })
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
 
-  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

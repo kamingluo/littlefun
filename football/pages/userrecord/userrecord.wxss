@@ -14,3 +14,11 @@
 .money{
   margin-left: 50rpx;
 }
+
+.text-kaming{
+  margin-top: -5rpx;
+}
+
+.cu-list{
+  margin-bottom: 20rpx;
+}

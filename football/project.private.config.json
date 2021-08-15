@@ -29,6 +29,12 @@
           "pathName": "pages/userrecord/userrecord",
           "query": "id=11&name=kaming",
           "scene": null
+        },
+        {
+          "name": "pages/statistics/statistics",
+          "pathName": "pages/statistics/statistics",
+          "query": "id=11&name=kaming",
+          "scene": null
         }
       ]
     }
