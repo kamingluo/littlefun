@@ -199,6 +199,14 @@ Page({
         adddata: adddata,
       })
     },
+
+    newremarks:function(e){
+      let adddata=this.data.adddata;
+      adddata.remarks=e.detail.value
+      this.setData({
+        adddata: adddata,
+      })
+    },
   
 
       //确认新增
